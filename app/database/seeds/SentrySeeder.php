@@ -8,10 +8,10 @@ class SentrySeeder extends Seeder
   {
     Sentry::getUserProvider()->create(array(
       // 'username'    => 'admin',
-      'email'       => 'admin@app.com',
+      'email'       => 'admin@subud.com',
       'password'    => '123456',
       'first_name'  => 'Admin',
-      'last_name'   => 'App',
+      'last_name'   => 'Subud',
       'activated'   => 1,
     ));
 
@@ -30,7 +30,7 @@ class SentrySeeder extends Seeder
     )));
 
     // Assign user permissions
-    $adminUser  = Sentry::getUserProvider()->findByLogin('admin@app.com');
+    $adminUser  = Sentry::getUserProvider()->findByLogin('admin@subud.com');
     $adminGroup = Sentry::getGroupProvider()->findByName('Admin');
     $adminUser->addGroup($adminGroup);
   }

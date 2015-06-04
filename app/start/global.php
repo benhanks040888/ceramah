@@ -91,7 +91,7 @@ require app_path().'/filters.php';
 |
 */
 
-require app_path().'/Ceramah/helpers.php';
+require app_path().'/Subud/helpers.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -100,7 +100,7 @@ require app_path().'/Ceramah/helpers.php';
 |
 */
 
-require app_path().'/Ceramah/presenters.php';
+require app_path().'/Subud/presenters.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -109,4 +109,4 @@ require app_path().'/Ceramah/presenters.php';
 |
 */
 
-require app_path().'/Ceramah/listeners.php';
+require app_path().'/Subud/listeners.php';
