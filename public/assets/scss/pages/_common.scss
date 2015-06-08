@@ -1,0 +1,29 @@
+.row-no-padding {
+  margin-left: 0;
+  margin-right: 0;
+  
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.col-no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.container {
+  width: 980px;
+}
+
+.main-container {
+  position: relative;
+  margin-top: 4rem;
+  height: $container-height;
+} 
+
+.body-right-container {
+  height: $container-height;
+  padding-right: 0;
+}

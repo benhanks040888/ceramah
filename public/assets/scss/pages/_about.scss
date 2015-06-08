@@ -1,0 +1,22 @@
+.content-about {
+  background: $ultra-light-gray;
+
+  header {
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .copy-base {
+    height: 360px;
+    padding-right: 20px;
+    overflow-y: scroll;
+  }
+}

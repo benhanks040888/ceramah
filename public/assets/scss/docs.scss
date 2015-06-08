@@ -1,5 +1,9 @@
 @import "site";
 
+.container {
+  width: 980px;
+}
+
 .docs-container > section > h3 {
   border-bottom: 1px solid #ccc;
   padding-bottom: .5em;

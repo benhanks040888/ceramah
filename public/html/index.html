@@ -9,12 +9,41 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800">
   </head>
   <body class="home">
-    <div class="container">
-      <h1>Home</h1>
+    <div class="container main-container">
+      <div class="content-home text-center">
+        <div class="logo-container"><img src="../assets/images/logo.png" alt="Logo"></div>
+        <h1>Surat dan ceramah-ceramah pilihan <hr> SELECTED LETTERS AND TALKS</h1><a href="#" class="btn btn-subud btn-default">English</a>
+        <a href="#" class="btn btn-subud btn-default">Bahasa Indonesia</a>
+      </div>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../assets/js/vendors/jquery-1.11.0.min.js"><\/script>')</script>
+    <div class="container footer-container"><footer class="row" id="footer">
+  <div class="col-xs-3 col-no-padding" id="title">
+    <p>Surat-surat &amp; ceramah-ceramah pilihan<br>Selected letters and talks</p>
+  </div>
+  
+  <div class="col-xs-7" id="copyright">
+    <p>
+      &copy; 1955-2015 by Subud Publication. All rights reserved. This site or any portion of its content may not be reproduced or used in any manner whatsoever without the express written permission of the publisher. Subud&reg; and the seven circles symbol are registered marks of the World Subud Association.
+    </p>
+  </div>
+
+  <div class="col-xs-2" id="language">
+    <a class="btn btn-lang" href="#" role="button">en</a>
+    <a class="btn btn-lang btn-active" href="#" role="button">id</a>
+  </div>
+
+</footer>
+    </div>
+    <script src="../assets/js/vendors/jquery-1.11.0.min.js"></script>
     <script src="../assets/js/vendors/bootstrap.min.js"></script>
+    <script src="../assets/js/vendors/masonry.pkgd.min.js"></script>
     <script src="../assets/js/site.min.js"></script>
+    <script>
+      $('.gallery-grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 130
+      });
+    </script>
   </body>
 </html>

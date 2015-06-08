@@ -9,27 +9,54 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800">
   </head>
   <body class="home">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 disclaimer-container text-center">
-          <div class="disclaimer">
-            <header>
-              <h1>Sangkalan</h1>
-            </header>
-            <p>Dokumen yang tersedia hanya dapat dibaca oleh Anggota Subud [dan patuh pada hak cipta]. Pengguna diminta untuk tidak memodifikasi, memproduksi kembali, meng-copy, menampilkan, mengambil foto ataupun mendistribusikan seluruh maupun sebagian dari dokumen ini dalam bentuk apapun atau media apapun tanpa persetujuan dari pemegang hak cipta.</p>
-            <p>Sebelumnya, Bapak dan Ibu Rahayu sudah menjelaskan bahwa ceramah-ceramah yang diberikan merupakan penerimaan dan diberikan sesuai dengan kebutuhan dan kapasitas penonton pada waktu itu. Bapak dan Ibu Rahayu juga menjelaskan bahwa ceramah-ceramah dan tulisan-tulisannya merupakan bimbingan, nasihat dan klarifikasi, bukan merupakan peraturan.</p>
-            <p>Surat-surat dari Bapak Muhammad Subuh dan Ibu Rahayu merupakan korespondensi pribadi [dicetak di sini dengan izin dari penanya]. Nasihat dan bimbingan yang diberikan khusus untuk keadaan koresponden.</p>
-          </div>
-          <div class="verification-container">
-            <a href="#" class="btn btn-subud btn-default">Setuju</a>
-            <a href="#" class="btn btn-subud btn-danger">Tidak Setuju</a>
+    <div class="container main-container">
+      <div class="content-disclaimer">
+        <div class="row">
+          <div class="col-xs-12 text-center disclaimer-container">
+            <div class="disclaimer copy-base">
+              <header>
+                <h3>Sangkalan</h3>
+              </header>
+              <p>Dokumen yang tersedia hanya dapat dibaca oleh Anggota Subud [dan patuh pada hak cipta]. Pengguna diminta untuk tidak memodifikasi, memproduksi kembali, meng-copy, menampilkan, mengambil foto ataupun mendistribusikan seluruh maupun sebagian dari dokumen ini dalam bentuk apapun atau media apapun tanpa persetujuan dari pemegang hak cipta.</p>
+              <p>Sebelumnya, Bapak dan Ibu Rahayu sudah menjelaskan bahwa ceramah-ceramah yang diberikan merupakan penerimaan dan diberikan sesuai dengan kebutuhan dan kapasitas penonton pada waktu itu. Bapak dan Ibu Rahayu juga menjelaskan bahwa ceramah-ceramah dan tulisan-tulisannya merupakan bimbingan, nasihat dan klarifikasi, bukan merupakan peraturan.</p>
+              <p>Surat-surat dari Bapak Muhammad Subuh dan Ibu Rahayu merupakan korespondensi pribadi [dicetak di sini dengan izin dari penanya]. Nasihat dan bimbingan yang diberikan khusus untuk keadaan koresponden.</p>
+            </div>
+            <div class="verification-container">
+              <a href="#" class="btn btn-subud btn-default">Setuju</a>
+              <a href="#" class="btn btn-subud btn-danger">Tidak Setuju</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../assets/js/vendors/jquery-1.11.0.min.js"><\/script>')</script>
+    <div class="container footer-container"><footer class="row" id="footer">
+  <div class="col-xs-3 col-no-padding" id="title">
+    <p>Surat-surat &amp; ceramah-ceramah pilihan<br>Selected letters and talks</p>
+  </div>
+  
+  <div class="col-xs-7" id="copyright">
+    <p>
+      &copy; 1955-2015 by Subud Publication. All rights reserved. This site or any portion of its content may not be reproduced or used in any manner whatsoever without the express written permission of the publisher. Subud&reg; and the seven circles symbol are registered marks of the World Subud Association.
+    </p>
+  </div>
+
+  <div class="col-xs-2" id="language">
+    <a class="btn btn-lang" href="#" role="button">en</a>
+    <a class="btn btn-lang btn-active" href="#" role="button">id</a>
+  </div>
+
+</footer>
+    </div>
+    <script src="../assets/js/vendors/jquery-1.11.0.min.js"></script>
     <script src="../assets/js/vendors/bootstrap.min.js"></script>
+    <script src="../assets/js/vendors/masonry.pkgd.min.js"></script>
     <script src="../assets/js/site.min.js"></script>
+    <script>
+      $('.gallery-grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 130
+      });
+    </script>
   </body>
 </html>

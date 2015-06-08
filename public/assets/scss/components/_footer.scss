@@ -1,0 +1,29 @@
+#footer {
+  margin-top: 1rem;
+  font-family: $font-family-base;
+
+  #title {
+    width: 260px;
+    height: 40px;
+    color: $light-gray;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-right: 1px solid $light-gray;
+    font-size: 7.6pt;
+  }
+
+  #copyright {
+    width: 602px;
+    height: 40px;
+    color: $gray;
+    border-right: 1px solid $light-gray;
+    font-weight: 200;
+    font-size: 0.6em;
+
+  }
+
+  #language {
+    width: 118px;
+    padding-right: 0
+  }
+}
