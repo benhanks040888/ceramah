@@ -9,8 +9,8 @@ html(class="no-js", lang="en")
     link(rel='stylesheet', href='../assets/css/vendors/bootstrap/bootstrap.css')
     link(rel='stylesheet', href='../assets/css/vendors/prism.css')
     link(rel='stylesheet', href='../assets/css/docs.css')
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oxygen:400,700')
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto+Mono:300')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Montserrat:400,700')
 
   body
 
@@ -35,6 +35,125 @@ html(class="no-js", lang="en")
         h3 Typography
         .module-wrapper
           include modules/typography.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Buttons
+        .module-wrapper
+          include modules/buttons.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Labels
+        .module-wrapper(style="position: relative;")
+          include modules/labels.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Gallery
+        .module-wrapper(style="position: relative;")
+          include modules/gallery.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Menu
+        .module-wrapper(style="position: relative;")
+          .content-right-container
+            include modules/menu.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Alphabet Menu
+        .module-wrapper(style="position: relative;")
+          .content-right-container
+            include modules/alphabet-menu.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Nav
+        .module-wrapper(style="position: relative;")
+          .content-right-container
+            include modules/nav.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Return Button
+        .module-wrapper(style="position: relative;")
+          .content-right-container
+            include modules/return-button.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Topic List
+        .module-wrapper(style="position: relative;")
+          .content-right-container
+            include modules/topic-list.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Image Panel
+        .module-wrapper(style="position: relative;")
+          .content-left-container
+            .primary-image-container
+              img(src="../assets/images/m-subuh-large.jpg" alt="Muhammad Subuh Sumohadiwidjojo")
+
+              include modules/image-panel.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Footer
+        .module-wrapper
+          include modules/footer.html
 
         a.show-code.js-show-code(href="") Show Code
         .code-container.hide

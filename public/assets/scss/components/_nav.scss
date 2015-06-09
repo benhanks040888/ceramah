@@ -1,0 +1,49 @@
+#navbar {
+  margin: 1rem 1rem 0rem;
+
+  form {
+    display: inline-block;
+    margin-left: 3px;
+  }
+}
+
+#input-search
+ {
+  display: inline-block;
+  margin: 0 3px;
+  background: none;
+  background-image: url('../images/ico-search.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 0.5rem 0.5rem 0.5rem 22px;
+  width: 180px;
+  color: $gray;
+  border: none;
+  border-bottom: 1px solid $light-gray;
+  font-family: $font-family-base;
+  font-weight: 200;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.menu-link,
+.home-link
+ {
+  display: inline-block;
+  margin: 0 3px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 0.5rem 0.5rem 0.5rem 22px;
+  color: $gray;
+  font-family: $font-family-base;
+  font-weight: 200;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+.menu-link {
+  background-image: url('../images/ico-menu.png');
+}
+.home-link {
+  margin-left: 8px;
+  background-image: url('../images/ico-home.png');
+}

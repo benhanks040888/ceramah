@@ -1,0 +1,17 @@
+extends layout
+
+block vars
+  - var bodyClass = 'home';
+
+block content
+  .row.row-no-padding.content-bpk-list-topic
+    .col-xs-8.content-left-container
+      .primary-image-container
+        img(src="../assets/images/cover-letter.jpg" alt="Cover Letter")
+       
+    .col-xs-4.content-right-container
+      include ../components/modules/nav.html 
+
+      include ../components/modules/topic-list.html 
+
+      include ../components/modules/return-button.html 

@@ -1,0 +1,44 @@
+.row-no-padding {
+  margin-left: 0;
+  margin-right: 0;
+  
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.col-no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.container {
+  width: 980px;
+}
+
+.main-container {
+  position: relative;
+  margin-top: 4rem;
+  padding: 0;
+  height: $container-height;
+} 
+
+.intro-right-container {
+  height: $container-height;
+  padding-right: 0;
+}
+
+.content-left-container {
+  position: relative;
+  width: 622px;
+  height: $container-height;
+  background: $ultra-light-gray;
+}
+
+.content-right-container {
+  position: relative;
+  width: 358px;
+  height: $container-height;
+  background: $ultra-light-gray;
+}

@@ -1,0 +1,65 @@
+.btn {
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 0;
+  font-family: $font-family-base;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all ease .3s;
+}
+
+.btn-default {
+  background-color: $gold;
+  color: $cobalt;
+  min-width: 210px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($gold, 10%);
+  }
+}
+
+.btn-danger {
+  background-color: $white;
+  color: $ruby;
+  text-transform: uppercase;
+  min-width: 210px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $ruby;
+    background-color: darken($white, 10%);
+  }
+}
+
+.btn-lang {
+  padding: 0.1rem 1.1rem;
+  color: $light-gray;
+  background-color: $white;
+  font-size: 1rem;
+  border: 2px solid;
+  border-radius: 20px; 
+  border-color: $light-gray; 
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: darken($light-gray, 10%);
+    border-color: darken($light-gray, 10%);
+  }
+  
+  &.btn-active {
+    color: $cobalt;
+    border-color: $cobalt;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($cobalt, 10%);
+      border-color: darken($cobalt, 10%);
+    }
+  }
+}

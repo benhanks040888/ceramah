@@ -1,0 +1,29 @@
+extends layout
+
+block vars
+  - var bodyClass = 'home';
+
+block content
+  .row.content-gallery
+    figure.col-xs-5.col-no-padding.featured-image
+      img(src="../assets/images/m-subuh.jpg" alt="Muhammad Subuh Sumohadiwidjojo")
+
+    .col-xs-7.intro-right-container
+      header
+        <h1><span>Photo Gallery</span><br>Bapak Muhammad Subuh Sumohadiwidjojo</h1>
+        
+      include ../components/modules/gallery.html
+
+      include ../components/modules/labels.html
+
+  //- section.container
+  //-   .row
+  //-     .col-xs-8
+
+  //-     .col-xs-8.sidebar-container
+  //-       header
+  //-         nav
+  //-           form(action="")
+  //-             input(type="text").search
+  //-           button.menu Menu
+  //-           a(href="").home Home

@@ -2,10 +2,16 @@
 $red: #dd3300;
 $dark-red: #a50f0f;
 $dark-gray: #444;
-$ultra-light-gray: #efefef;
 
 $blue: #124797;
 $white: #ffffff;
+
+$gold: #edbc44;
+$cobalt: #0f2d6f;
+$ruby: #eb212e;
+$gray: #666666;
+$light-gray: #999999;
+$ultra-light-gray: #f5f5f5;
 
 //  Font Colors
 $base-font-color: $dark-gray;
@@ -16,12 +22,18 @@ $complement-color: $blue;
 $background-color: $white;
 
 // Font Family
-$sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$oxygen: "Oxygen", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$gotham: "Gotham", Helvetica, Arial, sans-serif;
+$glypha: "Glypha45-Light", "Courier New", monospace;
+$monotype-corsiva: "Monotype Corsiva", Times, serif;
 
-$base-font-family: $sans-serif;
-$header-font-family: $oxygen;
+$font-family-base: $gotham;
+$font-family-monospace: $glypha;
+$font-family-serif: $monotype-corsiva;
+
 
 // $base-font-size: 1.6em;
 $base-font-size: 16px;
 $base-line-height: $base-font-size * 1.5;
+
+
+$container-height: 546px;

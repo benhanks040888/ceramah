@@ -1,0 +1,21 @@
+extends layout
+
+block vars
+  - var bodyClass = 'home';
+
+block content
+  .row.row-no-padding.content-bpk-main
+    .col-xs-8.content-left-container
+      .primary-image-container
+        img(src="../assets/images/m-subuh-large.jpg" alt="Muhammad Subuh Sumohadiwidjojo")
+      include ../components/modules/image-panel.html
+      
+    .col-xs-4.content-right-container
+      include ../components/modules/nav.html 
+
+      <ul class="menu-list">
+      <li class="menu-item"><a href="">Surat-surat pilihan dari Bapak Muhammad Subuh Sumohadiwdjojo</a></li>
+      <li class="menu-item"><a href="">Ceramah-ceramah dari Bapak Muhammad Subuh Sumohadiwdjojo</a></li>
+      </ul>
+
+      include ../components/modules/return-button.html 

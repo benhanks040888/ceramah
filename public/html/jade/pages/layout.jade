@@ -16,7 +16,10 @@ html(class="no-js", lang="en")
 
   body(class='#{bodyClass}')
     
-    .container
+    .container.main-container
       block content
+
+    .container.footer-container
+      include ../components/modules/footer.html
 
     include _includes/scripts
