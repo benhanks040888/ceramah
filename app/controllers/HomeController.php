@@ -10,4 +10,19 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+  public function getIndex()
+  {
+    return View::make('site.choose-language');
+  }
+
+  public function getSplash()
+  {
+    return View::make('site.splash');
+  }
+
+  public function getDisclaimer()
+  {
+    return View::make('site.disclaimer');
+  }
+
 }

@@ -1,22 +1,6 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
-
-Route::group(array('namespace' => 'App\Controllers'), function() {
-  Route::get('/', array('as' => 'home', 'uses' => 'HomeController@showWelcome'));
-});
-
-
-/*
  * 
  * Admin Route
  */
@@ -33,4 +17,21 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin'),
     Route::get('change-password', array('as' => 'admin.change-password', 'uses' => 'AuthController@getChangePassword'));
     Route::post('change-password', array('as' => 'admin.change-password.submit', 'uses' => 'AuthController@postChangePassword'));
   });
+});
+
+Route::group(array('namespace' => 'App\Controllers'), function() {
+  Route::get('/', array('as' => 'home', 'uses' => 'HomeController@getIndex'));
+
+  Route::get('splash', array('as' => 'splash', 'uses' => 'HomeController@getSplash'));
+  Route::get('disclaimer', array('as' => 'disclaimer', 'uses' => 'HomeController@getDisclaimer'));
+
+  Route::get('main', array('as' => 'main', 'uses' => 'MainController@getIndex'));
+
+  Route::get('content', array('as' => 'content.list', 'uses' => 'ContentController@getIndex'));
+  Route::get('content/{topic}', array('as' => 'content.topic', 'uses' => 'ContentController@getTopic'));
+  Route::get('content/{topic}/{code}', array('as' => 'content.detail', 'uses' => 'ContentController@getDetail'));
+
+  Route::get('{name}', array('as' => 'person.browse', 'uses' => 'MainController@getPerson'));
+  Route::get('{name}/{type}', array('as' => 'person.topic.list', 'uses' => 'ContentController@getPersonTopic'));
+
 });

@@ -26,12 +26,7 @@
     </script>
   </head>
   <body>
-
-    @include('_partials.header')
-    
     @yield('content')
-
-    @include('_partials.footer')
 
     <script src="{{ assets_url('js/vendors/jquery-1.11.0.min.js') }}"></script>
     <script src="{{ assets_url('js/vendors/bootstrap.min.js') }}"></script>
