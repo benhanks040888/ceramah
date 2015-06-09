@@ -20,10 +20,25 @@
 .main-container {
   position: relative;
   margin-top: 4rem;
+  padding: 0;
   height: $container-height;
 } 
 
-.body-right-container {
+.intro-right-container {
   height: $container-height;
   padding-right: 0;
+}
+
+.content-left-container {
+  position: relative;
+  width: 622px;
+  height: $container-height;
+  background: $ultra-light-gray;
+}
+
+.content-right-container {
+  position: relative;
+  width: 358px;
+  height: $container-height;
+  background: $ultra-light-gray;
 }

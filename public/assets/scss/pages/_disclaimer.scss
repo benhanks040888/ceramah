@@ -1,8 +1,11 @@
+.content-disclaimer {
+  background: linear-gradient(to bottom right, #d9e3ee, #f6f7f8);
+}
+
 .disclaimer-container {
   position: relative;
   height: $container-height;
   padding: 40px 110px;
-  background: linear-gradient(to bottom right, #d9e3ee, #f6f7f8);
   text-transform: uppercase;
 
   header {

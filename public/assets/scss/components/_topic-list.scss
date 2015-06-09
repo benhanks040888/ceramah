@@ -1,0 +1,26 @@
+.topic-list {
+	position: relative;
+	margin: 2rem 0px 3rem;
+	padding: 1rem 2rem;
+	height: 420px;
+	list-style: none;
+	overflow-y: scroll;
+
+	h3 {
+		color: $gold;
+		font-size: 16px;
+	}
+}
+
+.title-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	a {
+		color: $gray;
+		font-family: $font-family-base;
+		font-weight: 200;
+		font-size: 13px;
+	}
+}

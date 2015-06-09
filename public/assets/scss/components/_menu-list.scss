@@ -1,0 +1,30 @@
+.menu-list {
+	list-style: none;
+	padding: 0 16px;
+
+	.menu-item {
+		position: relative;
+		padding: 0.7rem 0px 0.7rem 3rem;
+		font-family: $font-family-base;
+		font-size: 11px;
+		font-weight: 200;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 13px;
+			left: 0;
+			width: 22px;
+			height: 21px;
+			background: url('../images/arrow-right.png') no-repeat;
+		}
+
+		a {
+			color: $gray;
+		}
+	}
+
+	.menu-item {
+		border-bottom: 1px solid $light-gray;
+	}
+}

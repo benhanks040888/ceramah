@@ -1,0 +1,19 @@
+.return-btn {
+  position: relative;
+  padding: 16px 16px 16px 38px;
+  color: $gray;
+  font-family: $font-family-base;
+  font-weight: 200;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 22px;
+    height: 21px;
+    background: url('../images/arrow-small-left.png') no-repeat;
+  }
+}
