@@ -1,62 +1,18 @@
 @extends('layouts.master')
 
 @section('content')
-  <div class="container">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <div class="text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eveniet ut eaque repudiandae ratione doloremque, at! Blanditiis, veritatis, voluptatibus. Mollitia illum repudiandae, a pariatur necessitatibus consequuntur earum totam suscipit qui.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eveniet ut eaque repudiandae ratione doloremque, at! Blanditiis, veritatis, voluptatibus. Mollitia illum repudiandae, a pariatur necessitatibus consequuntur earum totam suscipit qui.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eveniet ut eaque repudiandae ratione doloremque, at! Blanditiis, veritatis, voluptatibus. Mollitia illum repudiandae, a pariatur necessitatibus consequuntur earum totam suscipit qui.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eveniet ut eaque repudiandae ratione doloremque, at! Blanditiis, veritatis, voluptatibus. Mollitia illum repudiandae, a pariatur necessitatibus consequuntur earum totam suscipit qui.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eveniet ut eaque repudiandae ratione doloremque, at! Blanditiis, veritatis, voluptatibus. Mollitia illum repudiandae, a pariatur necessitatibus consequuntur earum totam suscipit qui.</p>
-          </div>
+  <div class="container main-container">
+    <div class="content-main text-center">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="copy-serif">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Curabitur egestas mi fermentum, luctus mauris quis, commodo est. <br>Curabitur in ante a neque cursus auctor eu ac felis. <br>In dolor felis, dapibus ut congue et, vestibulum sit amet libero.</p>
+          <p>Maecenas ultrices suscipit sem, eu ultrices dui iaculis porta. <br>Phasellus ullamcorper nisi sit amet ante fermentum, sed accumsan dolor consequat. <br>Cras ultricies tempus lobortis. <br>Nulla facilisi. <br>Sed non luctus massa, a egestas dolor.</p>
+          <p>Cras egestas diam eu tortor consectetur mattis. <br>Vivamus ut massa vel lectus vulputate fringilla ac a velit. <br>Integer ac diam a turpis mollis egestas. <br>Fusce aliquet, purus ac lobortis sagittis, quam metus dapibus erat, id lobortis quam ligula id eros. </p>
+          <p><small>(Toronto, Canada, 20 Agustust 1979, 79 YYZ 10)</small></p>
         </div>
-        <div class="item">
-          <div class="row">
-            <div class="col-sm-4">
-              <img src="http://placehold.it/360x270" class="img-responsive">
-            </div>
 
-            <div class="col-sm-8">
-              <h2>Tentang Bapak Muhammad Subuh Sumohadiwidjojo</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga facere impedit quas ducimus accusamus perferendis, dolores autem tempora voluptate accusantium, consectetur ullam quos at. Quidem sequi ipsam nulla iusto, unde?</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga facere impedit quas ducimus accusamus perferendis, dolores autem tempora voluptate accusantium, consectetur ullam quos at. Quidem sequi ipsam nulla iusto, unde?</p>
-
-              <a href="#" class="btn btn-primary">Tentang Bapak</a>
-              <a href="#" class="btn btn-primary">Photo Gallery</a>
-              <a href="{{ URL::route('disclaimer') }}" class="btn btn-primary">Go To Surat & Ceramah</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="row">
-            <div class="col-sm-4">
-              <img src="http://placehold.it/360x270" class="img-responsive">
-            </div>
-
-            <div class="col-sm-8">
-              <h2>Photo Gallery Bapak Muhammad Subuh Sumohadiwidjojo</h2>
-
-              <a href="#" class="btn btn-primary">Tentang Bapak</a>
-              <a href="#" class="btn btn-primary">Photo Gallery</a>
-              <a href="{{ URL::route('disclaimer') }}" class="btn btn-primary">Go To Surat & Ceramah</a>
-            </div>
-          </div>
-        </div>
+        <a href="{{ route('about') }}"><span class="label label-default">Tentang Bapak</span></a>
       </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="fa fa-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="fa fa-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
   </div>
 @stop

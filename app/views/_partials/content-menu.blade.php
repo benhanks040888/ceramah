@@ -1,8 +1,7 @@
-<div class="filters">
+<nav id="navbar">
   {{ Form::open(array('method' => 'GET')) }}
-    <i class="fa fa-search"></i>
-    <input type="text" name="q" placeholder="Search">
-    <a href="{{ route('main') }}"><i class="fa fa-bars"></i> Menu</a>
-    <a href="{{ route('home') }}"><i class="fa fa-home"></i> Home</a>
+    <input type="text" id="input-search" placeholder="Search">
   {{ Form::close() }}
-</div>
+  <a href="{{ route('main') }}" class="menu-link">Menu</a>
+  <a href="{{ route('home') }}" class="home-link">Home</a>
+</nav>

@@ -1,32 +1,31 @@
 @extends('layouts.master')
 
 @section('content')
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-7">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officiis nobis consequatur dolor debitis, provident molestiae voluptatem suscipit quas alias nulla reprehenderit error possimus cum adipisci, obcaecati doloribus quidem voluptate!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officiis nobis consequatur dolor debitis, provident molestiae voluptatem suscipit quas alias nulla reprehenderit error possimus cum adipisci, obcaecati doloribus quidem voluptate!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officiis nobis consequatur dolor debitis, provident molestiae voluptatem suscipit quas alias nulla reprehenderit error possimus cum adipisci, obcaecati doloribus quidem voluptate!</p>
-        <a href="#" data-toggle="modal" data-target="#modal">View Full Screen</a>
+  <div class="container main-container">
+    <div class="row row-no-padding content-content">
+      <div class="col-xs-8 content-left-container">
+        <div class="primary-image-container">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officiis nobis consequatur dolor debitis, provident molestiae voluptatem suscipit quas alias nulla reprehenderit error possimus cum adipisci, obcaecati doloribus quidem voluptate!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officiis nobis consequatur dolor debitis, provident molestiae voluptatem suscipit quas alias nulla reprehenderit error possimus cum adipisci, obcaecati doloribus quidem voluptate!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officiis nobis consequatur dolor debitis, provident molestiae voluptatem suscipit quas alias nulla reprehenderit error possimus cum adipisci, obcaecati doloribus quidem voluptate!</p>
+          <a href="#" data-toggle="modal" data-target="#modal">View Full Screen</a>
+        </div>
       </div>
-      <div class="col-sm-5">
+      <div class="col-xs-4 content-right-container">
         @include('_partials.content-menu')
 
-        <div class="content-list">
-          <h3>Marriage</h3>
-
-          <ul class="list-unstyled">
-            <li><a href="#">Marriage, Tag <span>RAH023ENG</span></a></li>
-          </ul>
-        </div>
-
-        <a href="{{ URL::previous() }}">
-          <i class="fa fa-chevron-left"></i> KEMBALI KE DEPAN
-        </a>
+        <ul class="topic-list">
+          <li class="topic-item">
+            <h3>Aim</h3>
+            <ul class="title-list">
+              <li><a href="#">Aim, Khusus <span>RAH023ENG</span></a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="{{ URL::previous() }}" class="return-btn">Kembali Ke Depan</a>
       </div>
     </div>
   </div>
-
 
   <div class="modal fade" id="modal">
     <div class="modal-dialog">

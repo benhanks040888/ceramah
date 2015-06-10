@@ -20,6 +20,16 @@ class HomeController extends BaseController {
     return View::make('site.splash');
   }
 
+  public function getAbout()
+  {
+    return View::make('site.about');
+  }
+
+  public function getGallery()
+  {
+    return View::make('site.gallery');
+  }
+
   public function getDisclaimer()
   {
     return View::make('site.disclaimer');

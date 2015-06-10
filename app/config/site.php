@@ -1,7 +1,7 @@
 <?php
 
 return array(
-  'title'         => 'Site Title',
-  'description'   => 'Site Description',
+  'title'         => 'Surat dan Ceramah-Ceramah Pilihan',
+  'description'   => 'Surat dan Ceramah-Ceramah Pilihan',
   'default_image' => ''
 );
