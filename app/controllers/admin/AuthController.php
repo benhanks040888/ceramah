@@ -34,8 +34,9 @@ class AuthController extends BaseController {
 
     $input = Input::all();
     $v = Validator::make($input, $rules);
-
-    if (!$v->fails()) {
+	
+	if (!$v->fails()) {
+		
       try {
         $credentials = array(
             'email'    => $input['email'],
@@ -43,9 +44,9 @@ class AuthController extends BaseController {
         );
 
         $user = Sentry::authenticate($credentials, false);
-
+		
         if ($user) {
-          return Redirect::route('admin.dashboard');
+			return Redirect::route('admin.dashboard');
         }
       }
       catch (WrongPasswordException $e)
