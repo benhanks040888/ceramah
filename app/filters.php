@@ -60,7 +60,7 @@ Route::filter('no-auth', function()
 
 Route::filter('admin', function () {
   if (! Sentry::check() || ! Sentry::getUser()->isAdmin() ) {
-    return Redirect::guest('admin');
+    return Redirect::guest('admin-cms');
   }
 });
 
