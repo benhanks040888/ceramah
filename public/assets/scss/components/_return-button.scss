@@ -17,3 +17,15 @@
     background: url('../images/arrow-small-left.png') no-repeat;
   }
 }
+
+.topic-list + .return-btn {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    width: 318px;
+    height: 1px;
+    background: $light-gray;
+  }
+}

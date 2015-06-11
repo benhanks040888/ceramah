@@ -1,4 +1,5 @@
 - var bodyClass = '';
+- var headerLogo = false;
 block vars
 
 doctype
@@ -15,6 +16,10 @@ html(class="no-js", lang="en")
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800')
 
   body(class='#{bodyClass}')
+
+    .container.header-container
+      if headerLogo
+        include ../components/modules/header.html
     
     .container.main-container
       block content

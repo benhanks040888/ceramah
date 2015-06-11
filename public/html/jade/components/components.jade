@@ -32,6 +32,17 @@ html(class="no-js", lang="en")
 
     .container.docs-container
       section
+        h3 Header
+        .module-wrapper
+          include modules/header.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
         h3 Typography
         .module-wrapper
           include modules/typography.html
@@ -136,6 +147,30 @@ html(class="no-js", lang="en")
 
     .container.docs-container
       section
+        h3 Topic List With ID
+        .module-wrapper(style="position: relative;")
+          .content-right-container
+            include modules/topic-list-with-id.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Topic List
+        .module-wrapper(style="position: relative;")
+          .content-right-container
+            include modules/topic-list.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
         h3 Image Panel
         .module-wrapper(style="position: relative;")
           .content-left-container
@@ -143,6 +178,34 @@ html(class="no-js", lang="en")
               img(src="../assets/images/m-subuh-large.jpg" alt="Muhammad Subuh Sumohadiwidjojo")
 
               include modules/image-panel.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Image Panel Transparent
+        .module-wrapper(style="position: relative;")
+
+          .content-right-container
+            .secondary-image-container
+              img(src="../assets/images/rahayu.jpg" alt="Rahayu")
+
+              include modules/image-panel-transparent.html
+
+        a.show-code.js-show-code(href="") Show Code
+        .code-container.hide
+          pre
+            code.lang-markup
+
+    .container.docs-container
+      section
+        h3 Topic Item
+        .module-wrapper(style="position: relative;")
+          .content-left-container
+            include modules/topic-item.html
 
         a.show-code.js-show-code(href="") Show Code
         .code-container.hide

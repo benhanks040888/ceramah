@@ -2,6 +2,7 @@ extends layout
 
 block vars
   - var bodyClass = 'home';
+  - var headerLogo = true;
 
 block content
   .row.row-no-padding.content-content
@@ -17,3 +18,4 @@ block content
 
       .secondary-image-container
         img(src="../assets/images/rahayu.jpg" alt="Rahayu")
+      include ../components/modules/image-panel-transparent.html

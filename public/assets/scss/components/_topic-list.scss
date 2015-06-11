@@ -1,10 +1,10 @@
 .topic-list {
 	position: relative;
 	margin: 2rem 0px 3rem;
-	padding: 1rem 2rem;
+	padding: 1rem 16px;
 	height: 420px;
 	list-style: none;
-	overflow-y: scroll;
+	overflow-y: auto;
 
 	h3 {
 		color: $gold;
@@ -22,5 +22,22 @@
 		font-family: $font-family-base;
 		font-weight: 200;
 		font-size: 13px;
+	}
+}
+
+.topic-list-with-id {
+	.title {
+    position: relative;
+		padding-right: 12rem;
+	}
+
+	.item-meta-id {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+	}
+
+	a:hover .item-meta-id {
+		text-decoration: underline;
 	}
 }
