@@ -4,10 +4,10 @@
   <div class="container main-container">
     <div class="row row-no-padding content-content">
       <div class="col-xs-8 content-left-container">
-        <div class="primary-image-container">
-          <img src="{{ assets_url('images/m-subuh-large.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
-        </div>
-        <a href="{{ route('person.browse', 'bapak-subud') }}">
+        <a href="{{ route('person.browse', 'bapak-subud') }}" class="personal-page-link">
+          <div class="primary-image-container">
+            <img src="{{ assets_url('images/m-subuh-large.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
+          </div>
           <div class="image-panel">
             <h2>
               <span>Surat dan ceramah-ceramah pilihan dari </span><br>
@@ -24,9 +24,17 @@
           <li class="menu-item"><a href="{{ route('person.browse', 'ibu-rahayu') }}">Surat dan ceramah-ceramah pilihan dari Ibu Rahayu Wiryohudoyo</a></li>
           <li class="menu-item"><a href="{{ route('content.list') }}">Daftar topik Surat dan <br>ceramah-ceramah pilihan</a></li>
         </ul>
-        <div class="secondary-image-container">
-          <img src="{{ assets_url('images/rahayu.jpg') }}" alt="Rahayu">
-        </div>
+        <a href="{{ route('person.browse', 'ibu-rahayu') }}" class="personal-page-link">
+          <div class="secondary-image-container">
+            <img src="{{ assets_url('images/rahayu.jpg') }}" alt="Rahayu">
+          </div>
+          <div class="image-panel image-panel-transparent">
+            <h3>
+              <span>Surat dan ceramah-ceramah pilihan dari </span><br>
+              Ibu Siti Rahayu Wiryohudoyo
+            </h3>
+          </div>
+        </a>
       </div>
     </div>
   </div>
