@@ -7,15 +7,17 @@ block vars
 block content
   .row.row-no-padding.content-content
     .col-xs-8.content-left-container
-      .primary-image-container
-        img(src="../assets/images/m-subuh-large.jpg" alt="Muhammad Subuh Sumohadiwidjojo")
-      include ../components/modules/image-panel.html
+      a(href="bpk-main.html").personal-page-link
+        .primary-image-container
+          img(src="../assets/images/m-subuh-large.jpg" alt="Muhammad Subuh Sumohadiwidjojo")
+        include ../components/modules/image-panel.html
       
     .col-xs-4.content-right-container
       include ../components/modules/nav.html 
 
       include ../components/modules/menu.html 
-
-      .secondary-image-container
-        img(src="../assets/images/rahayu.jpg" alt="Rahayu")
-      include ../components/modules/image-panel-transparent.html
+      
+      a(href="ibu-main.html").personal-page-link
+        .secondary-image-container
+          img(src="../assets/images/rahayu.jpg" alt="Rahayu")
+        include ../components/modules/image-panel-transparent.html

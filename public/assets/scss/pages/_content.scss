@@ -1,7 +1,17 @@
 .primary-image-container {
-	
+
 }
+
 .secondary-image-container {
-	position: absolute;
-	bottom: 0;	
+  position: absolute;
+  bottom: 0;  
+}
+
+.personal-page-link {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
 }

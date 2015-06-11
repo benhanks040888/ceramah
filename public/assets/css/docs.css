@@ -2539,6 +2539,28 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   text-decoration: none;
 }
 
+.section-navigation-container .section-link {
+  position: absolute;
+  display: block;
+  width: 45px;
+  height: 44px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.section-navigation-container .section-link:hover {
+  opacity: 1;
+}
+.section-navigation-container .prev-section {
+  left: -60px;
+  background: url("../images/arrow-left-white-large.png") no-repeat;
+}
+.section-navigation-container .next-section {
+  right: -60px;
+  background: url("../images/arrow-right-white-large.png") no-repeat;
+}
+
 .menu-list {
   list-style: none;
   padding: 0 16px;
@@ -2568,8 +2590,8 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 
 .alphabet-list {
   position: relative;
-  margin: 0 16px 16px;
-  padding: 0 0 16px;
+  margin: 0px 0px 16px;
+  padding: 16px 0px 16px;
   border-bottom: 1px solid #999999;
   list-style: none;
 }
@@ -2632,9 +2654,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.5);
   transition: background 0.2s ease-in-out;
 }
-.image-panel:hover {
-  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.9);
-}
 .image-panel h2 {
   margin: 0;
   font-size: 20px;
@@ -2655,12 +2674,13 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   background: url("../images/arrow-right-large.png") no-repeat;
 }
 
+.personal-page-link:hover .image-panel {
+  background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.9);
+}
+
 .image-panel-transparent {
   padding: 38px 16px 16px;
   background: none repeat scroll 0% 0% transparent;
-}
-.image-panel-transparent:hover {
-  background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.8);
 }
 .image-panel-transparent h3 {
   margin: 0;
@@ -2682,6 +2702,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   width: 29px;
   height: 31px;
   background: url("../images/arrow-right-white.png") no-repeat;
+}
+
+.personal-page-link:hover .image-panel-transparent {
+  background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.8);
 }
 
 #navbar {
@@ -3044,6 +3068,14 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .secondary-image-container {
   position: absolute;
   bottom: 0;
+}
+
+.personal-page-link {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+.personal-page-link:hover {
+  opacity: 1;
 }
 
 .container {
