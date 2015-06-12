@@ -3,6 +3,9 @@
 @section('content')
   <div class="container main-container">
     <div class="row content-gallery">
+      <div class="section-navigation-container">
+        <a href="{{ route('about') }}" class="section-link prev-section"></a>
+      </div>
       <figure class="col-xs-5 col-no-padding featured-image">
         <img src="{{ assets_url('images/m-subuh.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
       </figure>
