@@ -15,6 +15,4 @@
       </div>
     </div>
   </div>
-
-  @include('../_partials/footer')
 @stop

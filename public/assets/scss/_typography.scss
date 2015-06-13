@@ -1,4 +1,16 @@
 @font-face {
+  font-family: 'Bakersign';
+  src: url('../fonts/Bakrsign.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Bakrsign.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Bakrsign.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Bakrsign.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Bakrsign.svg#ed65122dea28471158d180150e31b09b') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
   font-family: 'Baskerville';
   src: url('../fonts/baskerville.eot'); /* IE9 Compat Modes */
   src: url('../fonts/baskerville.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -97,6 +109,8 @@ h1, h2, h3, h4, h5, h6 {
     color: $cobalt;
     font-family: $font-family-serif;
     text-transform: capitalize;
+    font-style: italic;
+    font-size: 18px;
   }
 }
 
@@ -117,4 +131,5 @@ h1, h2, h3, h4, h5, h6 {
   color: $cobalt;
   font-family: $font-family-serif;
   font-size: 1.5em;
+  font-style: italic;
 }

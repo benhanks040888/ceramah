@@ -5,7 +5,7 @@
     <div class="row row-no-padding content-content">
       <div class="col-xs-8 content-left-container">
         <div class="topic-item-container">
-          <div class="topic-body copy-mono">
+          <div class="topic-body copy-mono custom-scrollbar">
             <div class="inner">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Illa argumenta propria videamus, cur omnia sint paria peccata. Aliter enim nosmet ipsos nosse non possumus. Fortitudinis quaedam praecepta sunt ac paene leges, quae effeminari virum vetant in dolore. Cur post Tarentum ad Archytam? Duo Reges: constructio interrete. Cur igitur, inquam, res tam dissimiles eodem nomine appellas? </p>
            
@@ -48,7 +48,7 @@
       <div class="col-xs-4 content-right-container">
         @include('_partials.content-menu')
 
-        <ul class="topic-list topic-list-with-id">
+        <ul class="topic-list topic-list-with-id custom-scrollbar">
           <li class="topic-item">
             <h3>Aim</h3>
             <ul class="title-list">

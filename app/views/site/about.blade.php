@@ -13,7 +13,7 @@
       </figure>
       <div class="col-xs-7 intro-right-container">
         <header><h1><span>Tentang</span><br>Bapak Muhammad Subuh Sumohadiwidjojo</h1></header>
-        <div class="copy-base">
+        <div class="copy-base custom-scrollbar">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas mi fermentum, luctus mauris quis, commodo est. Curabitur in ante a neque cursus auctor eu ac felis. In dolor felis, dapibus ut congue et, vestibulum sit amet libero. </p>
           <p>Maecenas ultrices suscipit sem, eu ultrices dui iaculis porta. Phasellus ullamcorper nisi sit amet ante fermentum, sed accumsan dolor consequat. Cras ultricies tempus lobortis. Nulla facilisi. Sed non luctus massa, a egestas dolor. Cras egestas diam eu tortor consectetur mattis. Vivamus ut massa vel lectus vulputate fringilla ac a velit. </p>
           <p>Integer ac diam a turpis mollis egestas. Fusce aliquet, purus ac lobortis sagittis, quam metus dapibus erat, id lobortis quam ligula id eros. Cras in molestie dui, non mattis erat. Nunc fermentum nisi fermentum ante tristique dapibus. Nunc ultrices in neque nec ultricies. Vestibulum ut magna sit amet sapien consequat pulvinar.</p>

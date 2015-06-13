@@ -11,7 +11,7 @@
       </figure>
       <div class="col-xs-7 intro-right-container">
         <header><h1><span>Photo Gallery</span><br>Bapak Muhammad Subuh Sumohadiwidjojo</h1></header>
-        <div class="gallery-grid-container">
+        <div class="gallery-grid-container custom-scrollbar">
           <div class="gallery-grid">
             <div class="grid-item">
               <img src="{{ assets_url('images/gallery/beach.jpg') }}" class="modal-thumbnail" alt="beach" data-toggle="modal" data-target="#gallery-item-1">
@@ -168,15 +168,4 @@
       </div>
     </div>
   </div>
-@stop
-
-@section('scripts')
-  <script src="{{ assets_url('js/vendors/masonry.pkgd.min.js') }}"></script>
-  <script>
-    $('.gallery-grid').masonry({
-      // options
-      itemSelector: '.grid-item',
-      columnWidth: 130
-    });
-  </script>
 @stop

@@ -3999,6 +3999,15 @@ yx-axis
 
 /* ---------------------------------------- */
 @font-face {
+  font-family: 'Bakersign';
+  src: url("../fonts/Bakrsign.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/Bakrsign.eot?#iefix") format("embedded-opentype"), url("../fonts/Bakrsign.woff") format("woff"), url("../fonts/Bakrsign.ttf") format("truetype"), url("../fonts/Bakrsign.svg#ed65122dea28471158d180150e31b09b") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
   font-family: 'Baskerville';
   src: url("../fonts/baskerville.eot");
   /* IE9 Compat Modes */
@@ -4071,8 +4080,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   color: #0f2d6f;
-  font-family: "Monotype Corsiva", Times, serif;
+  font-family: "Baskerville", Times, serif;
   text-transform: capitalize;
+  font-style: italic;
+  font-size: 18px;
 }
 
 .copy-base {
@@ -4084,14 +4095,15 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 
 .copy-mono {
   color: #00177c;
-  font-family: "Glypha45-Light", "Courier New", monospace;
+  font-family: "Bakersign", serif;
   font-size: 18px;
 }
 
 .copy-serif {
   color: #0f2d6f;
-  font-family: "Monotype Corsiva", Times, serif;
+  font-family: "Baskerville", Times, serif;
   font-size: 1.5em;
+  font-style: italic;
 }
 
 .header-container {

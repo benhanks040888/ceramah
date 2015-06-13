@@ -11,7 +11,7 @@
       <div class="col-xs-4 content-right-container">
         @include('_partials.content-menu')
 
-        <ul class="topic-list">
+        <ul class="topic-list custom-scrollbar">
           <li class="topic-item">
             <h3>Aim</h3>
             <ul class="title-list">
