@@ -11,8 +11,26 @@
     </div>
 
     <div class="col-xs-2" id="language">
-      <a class="btn btn-lang" href="#" role="button">en</a>
-      <a class="btn btn-lang btn-active" href="#" role="button">id</a>
+      <a class="btn btn-lang @if(Cookie::get('subud_lang') === 'en')btn-active @endif " href="javascript:void(0)" onclick="changeLanguage('en')" role="button">en</a>
+      <a class="btn btn-lang @if(Cookie::get('subud_lang') !== 'en')btn-active @endif " href="javascript:void(0)" onclick="changeLanguage('id')" role="button">id</a>
     </div>
   </footer>
 </div>
+
+<script>
+	function changeLanguage(lang){
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
+		$.ajax({
+			url: "{{URL::route('language')}}",  //Server script to process data
+			type: 'POST',
+			dataType: 'json',
+			data: "lang="+lang,
+			cache: false,
+			success: function(data){
+				location.reload();
+			}
+		});
+	}
+</script>

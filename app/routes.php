@@ -19,4 +19,6 @@ Route::group(array('namespace' => 'App\Controllers'), function() {
   Route::get('{name}', array('as' => 'person.browse', 'uses' => 'MainController@getPerson'));
   Route::get('{name}/{type}', array('as' => 'person.topic.list', 'uses' => 'ContentController@getPersonTopic'));
 
+  Route::post('language', array('as' => 'language', 'uses' => 'HomeController@postChangeLanguage'));
+  
 });

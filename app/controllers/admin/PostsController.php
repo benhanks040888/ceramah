@@ -34,8 +34,8 @@ class PostsController extends BaseController {
 								'unsearchable' => false
 			),
 						array(
-				'name' => 'tag',
-				'alias' => 'Tag',
+				'name' => 'subtitle',
+				'alias' => 'Subtitle',
 				'type' => 'TEXT',
 								'hidden' => false,
 								'unsearchable' => false
@@ -166,12 +166,12 @@ class PostsController extends BaseController {
 				array(
 					'Code' => Input::get('code'),
 					'Title' => Input::get('title'),
-					'Tag' => Input::get('tag')
+					'Subtitle' => Input::get('subtitle')
 				),
 				array(
 					'Code' => 'required|unique:posts,code',
 					'Title' => 'required',
-					'Tag' => 'required'
+					'Subtitle' => 'required'
 				)
 			);
 			if ($validator->fails()){
@@ -179,8 +179,9 @@ class PostsController extends BaseController {
 			}
 				
 			$posts = new Posts;
-			$posts->title = Input::get('title');
-			$posts->code = Input::get('code');
+			$posts->title = trim(Input::get('title'));
+			$posts->subtitle = trim(Input::get('subtitle'));
+			$posts->code = trim(Input::get('code'));
 			$posts->tag = Input::get('tag');
 			$posts->person = $person;
 			$posts->type = $type;
@@ -198,12 +199,12 @@ class PostsController extends BaseController {
 					array(
 						'Code' => Input::get('code'),
 						'Title' => Input::get('title'),
-						'Tag' => Input::get('tag')
+						'Subtitle' => Input::get('subtitle')
 					),
 					array(
-						'Code' => 'required|unique:posts,code,'.Input::get('code'),
+						'Code' => 'required|unique:posts,code,'.Input::get('id'),
 						'Title' => 'required',
-						'Tag' => 'required'
+						'Subtitle' => 'required'
 					)
 				);
 				if ($validator->fails()){
@@ -211,8 +212,9 @@ class PostsController extends BaseController {
 				}
 				
 				$posts = Posts::find(Input::get('id'));
-				$posts->title = Input::get('title');
-				$posts->code = Input::get('code');
+				$posts->title = trim(Input::get('title'));
+				$posts->subtitle = trim(Input::get('subtitle'));
+				$posts->code = trim(Input::get('code'));
 				$posts->tag = Input::get('tag');
 				$posts->person = $person;
 				$posts->type = $type;

@@ -160,14 +160,16 @@ class GalleryController extends BaseController {
 				if($file->isValid()){
 					$extension = $file->getClientOriginalExtension();
 					$img = Image::make($file->getRealPath());
-					$img->fit(600, 600);
+					//$img->fit(600, 600);
 					$img->interlace();
 					$name = $gallery->title.'_'.uniqid();
 					$fileName = $this->upload_path.Str::slug($name).'.'.$extension;
 					$img->save($fileName);
 					$gallery->image = $fileName;
 					
-					$img->fit(300,300);
+					$img->resize(300, null, function ($constraint) {
+						$constraint->aspectRatio();
+					});
 					$img->interlace();
 					$fileName = $this->upload_path.Str::slug($name).'_thumb.'.$extension;
 					$img->save($fileName);
