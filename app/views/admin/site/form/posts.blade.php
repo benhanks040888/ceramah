@@ -33,6 +33,12 @@
 		</div>
 	</div>
 	<div class="form-group">
+		<label for="subtitle" class="col-sm-2 control-label">Subtitle</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="inputSubtitle" name="subtitle" placeholder="Subtitle" value="{{$input['subtitle'] or ''}}">
+		</div>
+	</div>
+	<div class="form-group">
 		<label for="tag" class="col-sm-2 control-label">Tag</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" id="inputTag" name="tag" placeholder="Tag" value="{{$input['tag'] or ''}}">

@@ -47,6 +47,22 @@ class Posts extends \Eloquent {
 		return $query->where('type','=',$type);
 	}
 	
+	public static function getInitials()
+	{
+		return DB::table(self::$myTable)
+				->select(DB::raw("DISTINCT(UCASE(LEFT(title,1))) AS init"))
+				->orderBy('title')
+				->get();
+	}
+	
+	public static function getTitleByInitials($init)
+	{
+		return DB::table(self::$myTable)
+				->select(DB::raw("DISTINCT(title) AS title"))
+				->where('title','like',$init.'%')
+				->get();
+	}
+	
 	//--------------------datatable---------------------------
         
 	public static function getDatatable($options)

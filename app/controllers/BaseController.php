@@ -10,8 +10,16 @@ class BaseController extends Controller {
   public function __construct()
   {
     $this->beforeFilter('csrf', array('on' => 'post'));
+	$this->checkLangCookie();
   }
 
+  private function checkLangCookie()
+  {
+	if(!Cookie::get('subud_lang')){
+		Cookie::queue('subud_lang','id');
+		$response = Response::make('');
+	}
+  }
 	/**
 	 * Setup the layout used by the controller.
 	 *

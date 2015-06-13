@@ -31,7 +31,6 @@
 				<img width="200" src="{{asset($input['image'])}}"/>
 			@endif
 			<input type="file" name="image" id="inputImage">
-			<p><i>Suggested dimension : 600 x 600</i></p>
 		</div>
 	</div>
 	<div class="form-group">

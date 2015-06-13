@@ -13,10 +13,11 @@
 
         <ul class="topic-list custom-scrollbar">
           <li class="topic-item">
-            <h3>Aim</h3>
+            <h3>{{$title}}</h3>
             <ul class="title-list">
-              <li><a href="{{ route('content.detail', array('aim', 'RAH020ENG')) }}">Aim, General <span>RAH020ENG</span></a></li>
-              <li><a href="{{ route('content.detail', array('aim', 'RAH023ENG')) }}">Aim, Khusus <span>RAH023ENG</span></a></li>
+			  @foreach($posts as $post)
+              <li><a href="{{ route('content.detail', array($title, $post->code)) }}">{{$post->subtitle}} <span>{{$post->code}}</span></a></li>
+              @endforeach
             </ul>
           </li>
         </ul>
