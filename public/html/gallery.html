@@ -22,7 +22,7 @@
 </div>
         <figure class="col-xs-5 col-no-padding featured-image"><img src="../assets/images/m-subuh.jpg" alt="Muhammad Subuh Sumohadiwidjojo"></figure>
         <div class="col-xs-7 intro-right-container">
-          <header><h1><span>Photo Gallery</span><br>Bapak Muhammad Subuh Sumohadiwidjojo</h1></header><div class="gallery-grid-container">
+          <header><h1><span>Photo Gallery</span><br>Bapak Muhammad Subuh Sumohadiwidjojo</h1></header><div class="gallery-grid-container custom-scrollbar">
   <div class="gallery-grid">
 
     <div class="grid-item">
@@ -201,13 +201,24 @@
     <script src="../assets/js/vendors/jquery-1.11.0.min.js"></script>
     <script src="../assets/js/vendors/bootstrap.min.js"></script>
     <script src="../assets/js/vendors/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/vendors/jquery.mCustomScrollbar.js"></script>
     <script src="../assets/js/site.min.js"></script>
     <script>
-      $('.gallery-grid').masonry({
-        // options
-        itemSelector: '.grid-item',
-        columnWidth: 130
-      });
+      (function($){
+        $(window).load(function(){
+          $('.gallery-grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 130
+          });
+          
+          $(".custom-scrollbar").mCustomScrollbar({
+            theme:"dark-3"
+          });
+      
+          $(".custom-scrollbar").css("opacity", 1);
+        });
+      })(jQuery);
     </script>
   </body>
 </html>

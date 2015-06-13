@@ -153,7 +153,7 @@
     <div class="container docs-container">
       <section>
         <h3>Gallery</h3>
-        <div style="position: relative;" class="module-wrapper"><div class="gallery-grid-container">
+        <div style="position: relative;" class="module-wrapper"><div class="gallery-grid-container custom-scrollbar">
   <div class="gallery-grid">
 
     <div class="grid-item">
@@ -399,7 +399,7 @@
       <section>
         <h3>Topic List</h3>
         <div style="position: relative;" class="module-wrapper">
-          <div class="content-right-container"><ul class="topic-list">
+          <div class="content-right-container"><ul class="topic-list custom-scrollbar">
   <li class="topic-item"><h3>A</h3>
     <ul class="title-list">
       <li class="title"><a href="item-topic.html">Aliter</a></li>
@@ -448,7 +448,7 @@
       <section>
         <h3>Topic List With ID</h3>
         <div style="position: relative;" class="module-wrapper">
-          <div class="content-right-container"><ul class="topic-list topic-list-with-id">
+          <div class="content-right-container"><ul class="topic-list topic-list-with-id custom-scrollbar">
   <li class="topic-item"><h3>Marriage</h3>
     <ul class="title-list">
       <li class="title"><a href="item-topic.html">Aliter <span class="item-meta-id">RAH023ENG</span></a></li>
@@ -468,7 +468,7 @@
       <section>
         <h3>Topic List</h3>
         <div style="position: relative;" class="module-wrapper">
-          <div class="content-right-container"><ul class="topic-list">
+          <div class="content-right-container"><ul class="topic-list custom-scrollbar">
   <li class="topic-item"><h3>A</h3>
     <ul class="title-list">
       <li class="title"><a href="item-topic.html">Aliter</a></li>
@@ -558,7 +558,7 @@
         <h3>Topic Item</h3>
         <div style="position: relative;" class="module-wrapper">
           <div class="content-left-container"><div class="topic-item-container">
-	<div class="topic-body copy-mono">
+	<div class="topic-body copy-mono custom-scrollbar">
 		<div class="inner">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Illa argumenta propria videamus, cur omnia sint paria peccata. Aliter enim nosmet ipsos nosse non possumus. Fortitudinis quaedam praecepta sunt ac paene leges, quae effeminari virum vetant in dolore. Cur post Tarentum ad Archytam? Duo Reges: constructio interrete. Cur igitur, inquam, res tam dissimiles eodem nomine appellas? </p>
 	 
@@ -650,6 +650,7 @@
     <script src="../assets/js/vendors/jquery-1.11.0.min.js"></script>
     <script src="../assets/js/vendors/bootstrap.min.js"></script>
     <script src="../assets/js/vendors/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/vendors/jquery.mCustomScrollbar.js"></script>
     <script src="../assets/js/vendors/prism.js"></script>
     <script src="../assets/js/site.min.js"></script>
     <script>
@@ -677,11 +678,22 @@
         })
       });
       
-      $('.gallery-grid').masonry({
-        // options
-        itemSelector: '.grid-item',
-        columnWidth: 130
-      });
+      (function($){
+        $(window).load(function(){
+      
+          $('.gallery-grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 130
+          });
+      
+          $(".custom-scrollbar").mCustomScrollbar({
+            theme:"dark-3"
+          });
+      
+          $(".custom-scrollbar").css("opacity", 1);
+        });
+      })(jQuery);
     </script>
   </body>
 </html>

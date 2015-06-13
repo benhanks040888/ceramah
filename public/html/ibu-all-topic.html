@@ -26,7 +26,7 @@
 	</form>
 	<a href="content.html" class="menu-link">Menu</a>
 	<a href="index.html" class="home-link">Home</a>
-</nav><ul class="topic-list topic-list-with-id">
+</nav><ul class="topic-list topic-list-with-id custom-scrollbar">
   <li class="topic-item"><h3>Marriage</h3>
     <ul class="title-list">
       <li class="title"><a href="item-topic.html">Aliter <span class="item-meta-id">RAH023ENG</span></a></li>
@@ -59,13 +59,24 @@
     <script src="../assets/js/vendors/jquery-1.11.0.min.js"></script>
     <script src="../assets/js/vendors/bootstrap.min.js"></script>
     <script src="../assets/js/vendors/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/vendors/jquery.mCustomScrollbar.js"></script>
     <script src="../assets/js/site.min.js"></script>
     <script>
-      $('.gallery-grid').masonry({
-        // options
-        itemSelector: '.grid-item',
-        columnWidth: 130
-      });
+      (function($){
+        $(window).load(function(){
+          $('.gallery-grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 130
+          });
+          
+          $(".custom-scrollbar").mCustomScrollbar({
+            theme:"dark-3"
+          });
+      
+          $(".custom-scrollbar").css("opacity", 1);
+        });
+      })(jQuery);
     </script>
   </body>
 </html>

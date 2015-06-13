@@ -41,3 +41,9 @@
   height: $container-height;
   background: $ultra-light-gray;
 }
+
+.custom-scrollbar {
+  padding-right: 10px;
+  opacity: 0;
+  transition: background 0.2s ease-in-out;
+}

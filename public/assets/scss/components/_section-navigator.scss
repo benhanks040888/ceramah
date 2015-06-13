@@ -8,6 +8,7 @@
   	transition: opacity 0.2s ease-in-out;
 	  top: 50%;
 	  transform: translateY(-50%);
+		backface-visibility: hidden;
 
 		&:hover {
 			opacity: 1;
