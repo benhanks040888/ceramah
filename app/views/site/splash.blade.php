@@ -15,23 +15,23 @@
     </div>
   </div>
   <audio autoplay>
-	@if($music)
-    <source src="{{$music}}" type="audio/mpeg">
-    @else
-	<source src="{{ assets_url('audio/Fortaleza.mp3') }}" type="audio/mpeg">
+    @if($music)
+      <source src="{{$music}}" type="audio/mpeg">
     @endif
-	Your browser does not support the audio element.
+    Your browser does not support the audio element.
   </audio>
 @stop
 
-@section('scripts')
-  <script>
-    $(function() {
-      $('.js-splash-nav').hide();
+@if($music)
+  @section('scripts')
+    <script>
+      $(function() {
+        $('.js-splash-nav').hide();
 
-      setInterval(function () {
-        $('.js-splash-nav').fadeIn('slow');
-      }, 30000);
-    });
-  </script>
-@stop
+        setInterval(function () {
+          $('.js-splash-nav').fadeIn('slow');
+        }, 30000);
+      });
+    </script>
+  @stop
+@endif

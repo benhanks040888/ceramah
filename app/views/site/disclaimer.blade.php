@@ -7,8 +7,7 @@
         <div class="col-xs-12 text-center disclaimer-container">
           <div class="disclaimer copy-base">
             <header>
-              <h3>Sangkalan</h3>
-              {{-- Disclaimer --}}
+              <h3>{{ getLang() == 'en' ? 'Disclaimer' : 'Sangkalan' }}</h3>
             </header>
             {{$content}}
           </div>

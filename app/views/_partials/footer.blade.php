@@ -20,16 +20,18 @@
 <script>
 	function changeLanguage(lang){
 		$.ajaxSetup({
-		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		  headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
 		});
 		$.ajax({
-			url: "{{URL::route('language')}}",  //Server script to process data
+			url: "{{ URL::route('language') }}",  //Server script to process data
 			type: 'POST',
 			dataType: 'json',
 			data: "lang="+lang,
 			cache: false,
 			success: function(data){
-				location.reload();
+        if (data.status == 1) {
+  				location.reload();
+        }
 			}
 		});
 	}

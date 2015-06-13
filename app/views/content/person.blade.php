@@ -5,12 +5,12 @@
     <div class="row row-no-padding content-content">
       <div class="col-xs-8 content-left-container">
         <div class="primary-image-container">
-          <img src="{{ assets_url('images/m-subuh-large.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
+          <img src="{{ $person == 'bapak' ? assets_url('images/m-subuh-large.jpg') : assets_url('images/rahayu-large.jpg') }}" alt="{{ $person == 'bapak' ? 'Bapak Muhammad Subuh Sumohadiwidjojo' : 'Ibu Siti Rahayu Wiryohudoyo' }}">
         </div>
         <div class="image-panel">
           <h2>
-            <span>Surat dan ceramah-ceramah pilihan dari </span><br>
-            Bapak Muhammad Subuh Sumohadiwidjojo
+            <span>{{ getLang() == 'en' ? 'Selected letters and talks from' : 'Surat dan ceramah-ceramah pilihan dari' }}</span><br>
+            {{ $person == 'bapak' ? 'Bapak Muhammad Subuh Sumohadiwidjojo' : 'Ibu Siti Rahayu Wiryohudoyo' }}
           </h2>
         </div>
       </div>
@@ -19,7 +19,7 @@
 
         <ul class="menu-list">
           <li class="menu-item">
-            <a data-toggle="collapse" href="#suratCollapse" aria-expanded="false" aria-controls="suratCollapse">Surat-surat pilihan dari Bapak Muhammad Subuh Sumohadiwdjojo</a>
+            <a data-toggle="collapse" href="#suratCollapse" aria-expanded="false" aria-controls="suratCollapse">{{ getLang() == 'en' ? 'Selected letters from' : 'Surat-surat pilihan dari' }}  {{ $person == 'bapak' ? 'Bapak Muhammad Subuh Sumohadiwdjojo' : 'Ibu Siti Rahayu Wiryohudoyo' }}</a>
           </li>
           <div class="collapse" id="suratCollapse">
             <ul class="alphabet-list">
@@ -49,11 +49,11 @@
               <li class="alphabet-item"><a href="">X</a></li>
               <li class="alphabet-item"><a href="">Y</a></li>
               <li class="alphabet-item"><a href="">Z</a></li>
-              <li class="alphabet-item view-all-item"><a href="{{ route('person.topic.list', array($person, 'surat')) }}">Lihat Semua Pilihan</a></li>
+              <li class="alphabet-item view-all-item"><a href="{{ route('person.topic.list', array($who, 'surat')) }}">Lihat Semua Pilihan</a></li>
             </ul>
           </div>
           <li class="menu-item">
-            <a data-toggle="collapse" href="#ceramahCollapse" aria-expanded="false" aria-controls="ceramahCollapse">Ceramah-ceramah dari Bapak Muhammad Subuh Sumohadiwdjojo</a>
+            <a data-toggle="collapse" href="#ceramahCollapse" aria-expanded="false" aria-controls="ceramahCollapse">{{ getLang() == 'en' ? 'Selected talks from' : 'Ceramah-ceramah dari' }}  {{ $person == 'bapak' ? 'Bapak Muhammad Subuh Sumohadiwdjojo' : 'Ibu Siti Rahayu Wiryohudoyo' }}</a>
           </li>
           <div class="collapse" id="ceramahCollapse">
             <ul class="alphabet-list">
@@ -83,12 +83,12 @@
               <li class="alphabet-item"><a href="">X</a></li>
               <li class="alphabet-item"><a href="">Y</a></li>
               <li class="alphabet-item"><a href="">Z</a></li>
-              <li class="alphabet-item view-all-item"><a href="{{ route('person.topic.list', array($person, 'ceramah')) }}">Lihat Semua Pilihan</a></li>
+              <li class="alphabet-item view-all-item"><a href="{{ route('person.topic.list', array($who, 'ceramah')) }}">Lihat Semua Pilihan</a></li>
             </ul>
           </div>
         </ul>
 
-        <a href="{{ route('main') }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="{{ route('main') }}" class="return-btn">{{ getLang() == 'en' ? 'Back' : 'Kembali ke depan' }}</a>
       </div>
     </div>
   </div>

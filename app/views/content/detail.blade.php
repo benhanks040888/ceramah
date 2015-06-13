@@ -48,7 +48,7 @@
             </ul>
           </li>
         </ul>
-        <a href="{{ URL::previous() }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="{{ URL::previous() }}" class="return-btn">{{ getLang() == 'en' ? 'Back' : 'Kembali ke depan' }}</a>
       </div>
     </div>
   </div>

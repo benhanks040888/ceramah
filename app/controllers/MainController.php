@@ -19,8 +19,4 @@ class MainController extends BaseController {
     return View::make('main.index');
   }
 
-  public function getPerson($person)
-  {
-    return View::make('main.browse', compact('person'));
-  }
 }

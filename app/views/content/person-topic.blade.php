@@ -5,7 +5,7 @@
     <div class="row row-no-padding content-content">
       <div class="col-xs-8 content-left-container">
         <div class="primary-image-container">
-          <img src="{{ assets_url('images/cover-letter.jpg') }}" alt="Cover Letter">
+          <img src="{{ $person == 'bapak' ? assets_url('images/cover-letter.jpg') : assets_url('images/cover-letter-ibu.jpg') }}" alt="Cover Letter">
         </div>
       </div>
       <div class="col-xs-4 content-right-container">
@@ -28,7 +28,7 @@
             </ul>
           </li>
         </ul>
-        <a href="{{ route('main') }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="{{ route('main') }}" class="return-btn">{{ getLang() == 'en' ? 'Back' : 'Kembali ke depan' }}</a>
       </div>
     </div>
   </div>
