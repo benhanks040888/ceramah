@@ -4574,9 +4574,19 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   }
 }
 .content-main {
-  padding: 3rem 1rem 2rem;
   -webkit-animation: fade-in 3s ease-in-out;
           animation: fade-in 3s ease-in-out;
+}
+.content-main .copy-wrapper {
+  height: 546px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.content-main .copy-serif {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .content-disclaimer {
@@ -4622,6 +4632,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .content-about .copy-base {
   height: 360px;
   padding-right: 10px;
+  font-size: 15px;
 }
 
 .content-gallery {
@@ -4647,8 +4658,8 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   height: 360px;
   padding-top: 4px;
   padding-left: 4px;
-  margin-top: -4px;
-  margin-left: -4px;
+  margin-top: -9px;
+  margin-left: -9px;
 }
 
 .gallery-grid {
@@ -4656,8 +4667,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .gallery-grid .grid-item {
   position: relative;
-  width: 130px;
-  padding: 0 10px 10px 0;
+  width: 120px;
+  padding: 0 5px 5px 0;
+  margin: 5px;
 }
 .gallery-grid .grid-item.item-width-2 {
   width: 260px;

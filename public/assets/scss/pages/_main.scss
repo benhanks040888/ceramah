@@ -4,6 +4,16 @@
 }
 
 .content-main {
-	padding: 3rem 1rem 2rem;
   	animation: fade-in 3s ease-in-out;
+
+	.copy-wrapper {
+		height: $container-height;
+		transform-style: preserve-3d;
+	}
+
+	.copy-serif {
+	    position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	 }
 }
