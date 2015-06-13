@@ -7,14 +7,12 @@
         <div class="primary-image-container">
           <img src="{{ assets_url('images/m-subuh-large.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
         </div>
-        <a href="{{ route('person.browse', 'bapak-subud') }}">
-          <div class="image-panel">
-            <h2>
-              <span>Surat dan ceramah-ceramah pilihan dari </span><br>
-              Bapak Muhammad Subuh Sumohadiwidjojo
-            </h2>
-          </div>
-        </a>
+        <div class="image-panel">
+          <h2>
+            <span>Surat dan ceramah-ceramah pilihan dari </span><br>
+            Bapak Muhammad Subuh Sumohadiwidjojo
+          </h2>
+        </div>
       </div>
       <div class="col-xs-4 content-right-container">
         @include('_partials.content-menu')

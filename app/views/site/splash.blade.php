@@ -7,7 +7,7 @@
         {{-- <a href="{{ route('home') }}" class="section-link prev-section"></a> --}}
         <a href="{{ route('about') }}" class="section-link next-section"></a>
       </div>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-8 col-xs-offset-2 copy-wrapper">
         <div class="copy-serif">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Curabitur egestas mi fermentum, luctus mauris quis, commodo est. <br>Curabitur in ante a neque cursus auctor eu ac felis. <br>In dolor felis, dapibus ut congue et, vestibulum sit amet libero.</p>
           <p>Maecenas ultrices suscipit sem, eu ultrices dui iaculis porta. <br>Phasellus ullamcorper nisi sit amet ante fermentum, sed accumsan dolor consequat. <br>Cras ultricies tempus lobortis. <br>Nulla facilisi. <br>Sed non luctus massa, a egestas dolor.</p>
