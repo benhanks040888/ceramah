@@ -3,11 +3,11 @@
 @section('content')
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Gallery</h1>
+      <h1 class="page-header">Category</h1>
     </div>
   </div>
   
-  <a href="{{URL::route('admin.gallery.add')}}" class="btn badge btn-info">+ Add New Data</a>
+  <a href="{{URL::route('admin.category.add')}}" class="btn badge btn-info">+ Add New Data</a>
   
   <hr/>
 	<div class="table-responsive">
@@ -38,9 +38,9 @@
 			});
 			var oTable = $(".datatable").dataTable({
 				"sPaginationType": "full_numbers",
-				"sAjaxSource" : "{{URL::route('admin.gallery.list')}}",
+				"sAjaxSource" : "{{URL::route('admin.category.list')}}",
 				'iDisplayLength' : 25,
-				"aaSorting": [[ 3, "desc" ]],
+				"aaSorting": [[ 4, "desc" ]],
 				'aafilter':'yes',
 				"aoColumns":[
 						<?php 
@@ -69,10 +69,7 @@
 				"fnDrawCallback": function ( oSettings ) {
 					var text;
 					for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ){		
-						if(oSettings.aoData[i]._aData[2] !== '')
-							$('td:eq(1)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html("<img width='100px' src='"+base_url+'/'+oSettings.aoData[i]._aData[2]+"'/>");
-						
-						$('td:eq(<?php echo $num_fields - $hidden_field ?>)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html("<table><tr><td><a href=\"{{URL::Route('admin.gallery.edit',array('id' => ''))}}/"+oSettings.aoData[i]._aData[0]+"\" class=\"btn btn-primary btn-xs\">EDIT</a></td>"
+						$('td:eq(<?php echo $num_fields - $hidden_field ?>)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html("<table><tr><td><a href=\"{{URL::Route('admin.category.edit',array('id' => ''))}}/"+oSettings.aoData[i]._aData[0]+"\" class=\"btn btn-primary btn-xs\">EDIT</a></td>"
 						+"<td><a href=\"javascript:void(0)\" onclick=\"deleteRow("+oSettings.aoData[i]._aData[0]+")\" class=\"btn btn-danger btn-xs\">DELETE</a></td></tr>"
 						+"</table>");
 					}
@@ -98,7 +95,7 @@
 		function deleteRow(id){
 			if(confirm("Are you sure you want to delete this row?")){
 				$.ajax({
-					url: "{{URL::route('admin.gallery.delete')}}",  //Server script to process data
+					url: "{{URL::route('admin.category.delete')}}",  //Server script to process data
 					type: 'POST',
 					dataType: 'json',
 					data: "id="+id,

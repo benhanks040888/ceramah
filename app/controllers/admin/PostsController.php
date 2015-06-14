@@ -3,6 +3,7 @@
 use BaseController;
 use DB, Str, View, Input, Redirect, Validator, Image, File;
 use App\Models\Posts;
+use App\Models\Category;
 
 class PostsController extends BaseController {
 
@@ -21,21 +22,42 @@ class PostsController extends BaseController {
 			),
 						array(
 				'name' => 'code',
-				'alias' => 'Code',
+				'alias' => 'Code (ID)',
 				'type' => 'TEXT',
 								'hidden' => false,
 								'unsearchable' => false
 			),
 						array(
 				'name' => 'title',
-				'alias' => 'Title',
+				'alias' => 'Title (ID)',
 				'type' => 'TEXT',
 								'hidden' => false,
 								'unsearchable' => false
 			),
 						array(
 				'name' => 'subtitle',
-				'alias' => 'Subtitle',
+				'alias' => 'Subtitle (ID)',
+				'type' => 'TEXT',
+								'hidden' => false,
+								'unsearchable' => false
+			),
+						array(
+				'name' => 'code_en',
+				'alias' => 'Code (EN)',
+				'type' => 'TEXT',
+								'hidden' => false,
+								'unsearchable' => false
+			),
+						array(
+				'name' => 'title_en',
+				'alias' => 'Title (EN)',
+				'type' => 'TEXT',
+								'hidden' => false,
+								'unsearchable' => false
+			),
+						array(
+				'name' => 'subtitle_en',
+				'alias' => 'Subtitle (EN)',
 				'type' => 'TEXT',
 								'hidden' => false,
 								'unsearchable' => false
@@ -72,11 +94,14 @@ class PostsController extends BaseController {
 	{
 		if(!in_array($type,$this->accepted_type) || !in_array($person,$this->accepted_person))
 			return Redirect::route('admin.posts',array('type'=>'surat','person'=>'bapak'));
-		
+		$all_cat = Category::Owner($person)->get();
+		$category = $all_cat->lists('full-title','id');
 		$data = array();
 		$data['title'] = ucfirst($type).' '.ucfirst($person).' - Add';
 		$data['parameter'] = array('type'=>$type, 'person'=>$person);
+		$data['category'] = $category;
 		$data['input'] = Input::old();
+		$data['input']['category_id'] = '';
 		return View::make('admin.site.form.posts',$data);
 	}
 	
@@ -93,9 +118,12 @@ class PostsController extends BaseController {
 		}
 		$type = $data['input']['type'];
 		$person = $data['input']['person'];
+		$all_cat = Category::Owner($person)->get();
+		$category = $all_cat->lists('full-title','id');
 		$data['title'] = ucfirst($type).' '.ucfirst($person).' - Edit';
 		$data['formProcess'] = "editProcess";
 		$data['parameter'] = array('type'=>$type, 'person'=>$person);
+		$data['category'] = $category;
 		return View::make('admin.site.form.posts',$data);
 	}
 	
@@ -164,14 +192,18 @@ class PostsController extends BaseController {
 		if(Input::get('_action') == 'addProcess'){
 			$validator = Validator::make(
 				array(
-					'Code' => Input::get('code'),
-					'Title' => Input::get('title'),
-					'Subtitle' => Input::get('subtitle')
+					'Code (ID)' => Input::get('code'),
+					'Title' => Input::get('category_id'),
+					'Subtitle (ID)' => Input::get('subtitle'),
+					'Code (EN)' => Input::get('code_en'),
+					'Subtitle (EN)' => Input::get('subtitle_en')
 				),
 				array(
-					'Code' => 'required|unique:posts,code',
+					'Code (ID)' => 'required|unique:posts,code',
 					'Title' => 'required',
-					'Subtitle' => 'required'
+					'Subtitle (ID)' => 'required',
+					'Code (EN)' => 'required',
+					'Subtitle (EN)' => 'required'
 				)
 			);
 			if ($validator->fails()){
@@ -179,10 +211,19 @@ class PostsController extends BaseController {
 			}
 				
 			$posts = new Posts;
-			$posts->title = trim(Input::get('title'));
+			$posts->category_id = Input::get('category_id');
+			$category = Category::find($posts->category_id); 
+			if(is_null($category)){
+				throw new \Exception('Error retrieving Title');
+			}
+			$posts->title = $category->category_id;
+			$posts->title_en = $category->category_en;
 			$posts->subtitle = trim(Input::get('subtitle'));
 			$posts->code = trim(Input::get('code'));
 			$posts->tag = Input::get('tag');
+			$posts->subtitle_en = trim(Input::get('subtitle_en'));
+			$posts->code_en = trim(Input::get('code_en'));
+			$posts->tag_en = Input::get('tag_en');
 			$posts->person = $person;
 			$posts->type = $type;
 			$posts->content_id = Input::get('content_id');
@@ -197,14 +238,18 @@ class PostsController extends BaseController {
 			if(Input::has('id')){
 				$validator = Validator::make(
 					array(
-						'Code' => Input::get('code'),
-						'Title' => Input::get('title'),
-						'Subtitle' => Input::get('subtitle')
+						'Code (ID)' => Input::get('code'),
+						'Title' => Input::get('category_id'),
+						'Subtitle (ID)' => Input::get('subtitle'),
+						'Code (EN)' => Input::get('code_en'),
+						'Subtitle (EN)' => Input::get('subtitle_en')
 					),
 					array(
-						'Code' => 'required|unique:posts,code,'.Input::get('id'),
+						'Code (ID)' => 'required|unique:posts,code,'.Input::get('id'),
 						'Title' => 'required',
-						'Subtitle' => 'required'
+						'Subtitle (ID)' => 'required',
+						'Code (EN)' => 'required',
+						'Subtitle (EN)' => 'required'
 					)
 				);
 				if ($validator->fails()){
@@ -212,10 +257,19 @@ class PostsController extends BaseController {
 				}
 				
 				$posts = Posts::find(Input::get('id'));
-				$posts->title = trim(Input::get('title'));
+				$posts->category_id = Input::get('category_id');
+				$category = Category::find($posts->category_id); 
+				if(is_null($category)){
+					throw new \Exception('Error retrieving Title');
+				}
+				$posts->title = $category->category_id;
+				$posts->title_en = $category->category_en;
 				$posts->subtitle = trim(Input::get('subtitle'));
+				$posts->subtitle_en = trim(Input::get('subtitle_en'));
 				$posts->code = trim(Input::get('code'));
+				$posts->code_en = trim(Input::get('code_en'));
 				$posts->tag = Input::get('tag');
+				$posts->tag_en = Input::get('tag_en');
 				$posts->person = $person;
 				$posts->type = $type;
 				$posts->content_id = Input::get('content_id');

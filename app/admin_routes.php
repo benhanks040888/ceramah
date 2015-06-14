@@ -40,5 +40,13 @@ Route::group(array('prefix' => 'admin-cms', 'namespace' => 'App\Controllers\Admi
     Route::post('posts/detail', array('as' => 'admin.posts.detail', 'uses' => 'PostsController@postDetail'));
 	Route::post('posts/submit/{type}/{person}', array('as' => 'admin.posts.submit', 'uses' => 'PostsController@postSubmit'));
 	Route::post('posts/delete', array('as' => 'admin.posts.delete', 'uses' => 'PostsController@postDelete'));
+  
+    Route::get('category', array('as' => 'admin.category', 'uses' => 'CategoryController@getList'));
+    Route::get('category/list', array('as' => 'admin.category.list', 'uses' => 'CategoryController@postList'));
+	Route::get('category/add', array('as' => 'admin.category.add', 'uses' => 'CategoryController@getFormAdd'));
+    Route::get('category/edit/{id}', array('as' => 'admin.category.edit', 'uses' => 'CategoryController@getFormEdit'));
+	Route::post('category/detail', array('as' => 'admin.category.detail', 'uses' => 'CategoryController@postDetail'));
+	Route::post('category/submit', array('as' => 'admin.category.submit', 'uses' => 'CategoryController@postSubmit'));
+	Route::post('category/delete', array('as' => 'admin.category.delete', 'uses' => 'CategoryController@postDelete'));
   });
 });

@@ -11,6 +11,7 @@
 	  <li><a href="{{ URL::route('admin.gallery') }}"><i class="fa fa-image fa-fw"></i> Gallery</a></li>
 	  <li><a href="{{ URL::route('admin.pages') }}"><i class="fa fa-bookmark fa-fw"></i> Pages</a></li>
 	  <li><a href="{{ URL::route('admin.music') }}"><i class="fa fa-music fa-fw"></i> Background Music</a></li>
+	  <li><a href="{{ URL::route('admin.category') }}"><i class="fa fa-folder-open fa-fw"></i> Category / Title</a></li>
     </ul>
   </div>
 </div>
