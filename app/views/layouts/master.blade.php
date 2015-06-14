@@ -37,6 +37,7 @@
     <script src="{{ assets_url('js/vendors/bootstrap.min.js') }}"></script>
     <script src="{{ assets_url('js/vendors/masonry.pkgd.min.js') }}"></script>
     <script src="{{ assets_url('js/vendors/jquery.mCustomScrollbar.js') }}"></script>
+    <script src="{{ assets_url('js/vendors/jquery.mousewheel.js') }}"></script>
     <script src="{{ assets_url('js/site.min.js') }}?v={{ filemtime(public_path() . '/assets/js/site.min.js') }}"></script>
 
     @yield('scripts')

@@ -7,11 +7,7 @@
         <div class="topic-item-container">
           <div class="topic-body copy-mono custom-scrollbar">
             <div class="inner">
-				@if(Cookie::get('subud_lang') === 'en')
-				{{$post->content_en}}
-				@else
-				{{$post->content_id}}
-				@endif
+				 {{ getLang() == 'en' ? $post->content_en:$post->content_id}}
             </div>
           </div>
           <div class="modal-caller-container">
@@ -23,11 +19,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                   
                   <div class="topic-body copy-mono">
-                   @if(Cookie::get('subud_lang') === 'en')
-					{{$post->content_en}}
-					@else
-					{{$post->content_id}}
-					@endif
+                  {{ getLang() == 'en' ? $post->content_en:$post->content_id}}
                   </div>
                 </div>
               </div>
@@ -48,7 +40,7 @@
             </ul>
           </li>
         </ul>
-        <a href="@if(URL::previous()===URL::route('content.search')) {{URL::route('main')}} @else {{ URL::previous() }}@endif" class="return-btn">Kembali Ke Depan</a>
+        <a href="@if(URL::previous()===URL::route('content.search')) {{URL::route('main')}} @else {{ URL::previous() }}@endif" class="return-btn">{{ getLang() == 'en' ? 'Back' : 'Kembali ke depan' }}</a>
       </div>
     </div>
   </div>

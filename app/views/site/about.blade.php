@@ -12,7 +12,7 @@
         <img src="{{ assets_url('images/m-subuh.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
       </figure>
       <div class="col-xs-7 intro-right-container">
-        <header><h1><span>Tentang</span><br>Bapak Muhammad Subuh Sumohadiwidjojo</h1></header>
+        <header><h1><span>{{ getLang() == 'en' ? 'About' : 'Tentang' }}</span><br>Bapak Muhammad Subuh Sumohadiwidjojo</h1></header>
         <div class="copy-base custom-scrollbar">
           {{$content}}
         </div>

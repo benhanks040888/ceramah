@@ -24,37 +24,39 @@ class HomeController extends BaseController {
 
   public function getIndex()
   {
-	return View::make('site.choose-language');
+    return View::make('site.choose-language');
   }
 
   public function getSplash()
   {
-	$content = Pages::Section('Kata Pembuka')->first();
-	$data['content'] = "Data not found";
-	if($content){
-		$data['content'] = $content->content_id;
-		if($this->lang === 'en')
-			$data['content'] = $content->content_en;
-	}
-	
-	$music = Music::first();
-	$data['music'] = '';
-	if($music){
-		$data['music'] = $music->file_name;
-	}
-	
+  	$content = Pages::Section('Kata Pembuka')->first();
+  	$data['content'] = "Data not found";
+
+  	if($content){
+  		$data['content'] = $content->content_id;
+  		if($this->lang === 'en')
+  			$data['content'] = $content->content_en;
+  	}
+  	
+  	$music = Music::first();
+  	$data['music'] = '';
+  	if($music){
+  		$data['music'] = $music->file_name;
+  	}
+  	
     return View::make('site.splash',$data);
   }
 
   public function getAbout()
   {
     $content = Pages::Section('Tentang Bapak')->first();
-	$data['content'] = "Data not found";
-	if($content){
-		$data['content'] = $content->content_id;
-		if($this->lang === 'en')
-			$data['content'] = $content->content_en;
-	}
+  	$data['content'] = "Data not found";
+  	if($content){
+  		$data['content'] = $content->content_id;
+		  if($this->lang === 'en') {        
+			  $data['content'] = $content->content_en;
+      }
+	  }
 	
     return View::make('site.about',$data);
   }
@@ -62,28 +64,37 @@ class HomeController extends BaseController {
   public function getGallery()
   {
     $content = Gallery::get();
-	$data['content'] = $content;
+	  $data['content'] = $content;
     return View::make('site.gallery',$data);
   }
 
   public function getDisclaimer()
   {
     $content = Pages::Section('Sangkalan')->first();
-	$data['content'] = "Data not found";
-	if($content){
-		$data['content'] = $content->content_id;
-		if($this->lang === 'en')
-			$data['content'] = $content->content_en;
-	}
+	  $data['content'] = "Data not found";
+
+    if($content){
+		  $data['content'] = $content->content_id;
+		  if($this->lang === 'en') {
+  			$data['content'] = $content->content_en;
+      }
+	  }
     return View::make('site.disclaimer',$data);
   }
 
   public function postChangeLanguage()
   {
-	$lang = Input::get('lang');
-	if($lang === 'en' || $lang === 'id')
-		Cookie::queue('subud_lang',$lang);
-	Response::make();
-	echo 1;
+  	$lang = Input::get('lang');
+
+    // set cookie
+    $cookie = Cookie::forever('subud_lang', $lang);
+
+    $return = array(
+      'status' => 1,
+      'message' => 'Cookie subud_lang set'
+    );
+
+    return Response::json($return)
+          ->withCookie($cookie);
   }
 }

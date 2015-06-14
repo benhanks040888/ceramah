@@ -5,7 +5,7 @@
     <div class="row row-no-padding content-content">
       <div class="col-xs-8 content-left-container">
         <div class="primary-image-container">
-          <img src="{{ assets_url('images/cover-letter.jpg') }}" alt="Cover Letter">
+          <img src="{{ $person == 'bapak' ? assets_url('images/cover-letter.jpg') : assets_url('images/cover-letter-ibu.jpg') }}" alt="Cover Letter">
         </div>
       </div>
       <div class="col-xs-4 content-right-container">
@@ -13,11 +13,7 @@
 
         <ul class="topic-list topic-list-with-id custom-scrollbar">
 		  @if(!$posts)
-			@if(Cookie::get('subud_lang') === 'en')
-			<li class="topic-item"><h3>No records found</h3></li>
-			@else
-			<li class="topic-item"><h3>Data tidak ditemukan</h3></li>
-			@endif
+			<li class="topic-item"><h3>{{getLang() == 'en' ? 'No records found':'Data tidak ditemukan'}}</h3></li>
 		  @else
 			  @foreach($posts as $title=>$postx)
 			  <li class="topic-item">
@@ -31,7 +27,7 @@
 			  @endforeach
 		  @endif
         </ul>
-        <a href="{{ route('person.browse',$person) }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="{{ route('person.browse',$person) }}" class="return-btn">{{ getLang() == 'en' ? 'Back' : 'Kembali ke depan' }}</a>
       </div>
     </div>
   </div>

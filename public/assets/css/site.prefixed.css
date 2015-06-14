@@ -4189,6 +4189,13 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 200;
+  min-height: 49px;
+  display: table;
+  width: 100%;
+}
+.menu-list .menu-item > a {
+  display: table-cell;
+  vertical-align: middle;
 }
 .menu-list .menu-item::before {
   content: "";

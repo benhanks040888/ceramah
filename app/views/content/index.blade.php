@@ -12,18 +12,18 @@
         @include('_partials.content-menu')
 
         <ul class="topic-list custom-scrollbar">
-		@foreach($posts as $init=>$postx)
-          <li class="topic-item">
-            <h3>{{$init}}</h3>
-            <ul class="title-list">
+		      @foreach($posts as $init=>$postx)
+            <li class="topic-item">
+              <h3>{{$init}}</h3>
+              <ul class="title-list">
 				@foreach($postx as $post)
 				<li class="title"><a href="{{ route('content.topic', Str::slug($post->title)) }}">{{$post->title}}</a></li>
                 @endforeach
-            </ul>
-          </li>
-		@endforeach
+              </ul>
+            </li>
+      		@endforeach
         </ul>
-        <a href="{{ URL::route('main') }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="{{ URL::route('main') }}" class="return-btn">{{ getLang() == 'en' ? 'Back' : 'Kembali ke depan' }}</a>
       </div>
     </div>
   </div>
