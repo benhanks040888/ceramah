@@ -31,7 +31,7 @@
 			  @endforeach
 		  @endif
         </ul>
-        <a href="{{ route('person.browse',$person) }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="{{ route('main') }}" class="return-btn">Kembali Ke Depan</a>
       </div>
     </div>
   </div>

@@ -63,6 +63,49 @@ class Posts extends \Eloquent {
 				->get();
 	}
 	
+	public static function getTitleByPersonAndType($person = '', $type = '')
+	{
+		return DB::table(self::$myTable)
+				->select(DB::raw("DISTINCT(title) AS title"))
+				->where('person','like',$person)
+				->where('type','like',$type)
+				->get();
+	}
+	
+	public static function getTitleByPersonAndTypeAndInitial($person = '', $type = '',$init = '')
+	{
+		return DB::table(self::$myTable)
+				->select(DB::raw("DISTINCT(title) AS title"))
+				->where('person','like',$person)
+				->where('type','like',$type)
+				->where('title','like',$init.'%')
+				->get();
+	}
+	
+	public static function getPostsByPersonAndTypeAndTitle($person = '', $type = '', $title = '')
+	{
+		return DB::table(self::$myTable)
+				->where('title','like',$title)
+				->where('person','like',$person)
+				->where('type','like',$type)
+				->get();
+	}
+	
+	public static function getPostsByTitle($title = '')
+	{
+		return DB::table(self::$myTable)
+				->where('title','like',$title)
+				->get();
+	}
+	
+	public static function searchByTitleOrCode($term)
+	{
+		return DB::table(self::$myTable)
+				->where('title','like','%'.$term.'%')
+				->orWhere('code','like','%'.$term.'%')
+				->orderBy('title')
+				->get();
+	}
 	//--------------------datatable---------------------------
         
 	public static function getDatatable($options)

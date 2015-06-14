@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
 use BaseController;
-use View,Redirect;
+use View,Redirect,Input;
 use App\Models\Posts;
 
 class ContentController extends BaseController {
@@ -30,9 +30,40 @@ class ContentController extends BaseController {
 
   public function getPersonTopic($person, $type)
   {
-    return View::make('content.person-topic', compact('person', 'type'));
+    $post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
+	$titles = Posts::getTitleByPersonAndType($post_person,$type);
+	$posts = array();
+	foreach($titles as $title){
+		$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
+	}
+	return View::make('content.person-topic', compact('posts','person', 'type'));
+  }
+  
+  public function getPersonTopicByInitial($person, $type, $init)
+  {
+    $post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
+	$titles = Posts::getTitleByPersonAndTypeAndInitial($post_person,$type,$init);
+	$posts = array();
+	foreach($titles as $title){
+		$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
+	}
+	return View::make('content.person-topic', compact('posts','person', 'type'));
   }
 
+  public function postSearch()
+  {
+	$term = Input::get('term');
+	
+    $results = Posts::searchByTitleOrCode($term);
+	$posts = array();
+	foreach($results as $result){
+		if(!isset($posts[$result->title]))
+			$posts[$result->title] = array();
+		array_push($posts[$result->title],$result);
+	}
+	return View::make('content.search-result', compact('posts'));
+  }
+  
   public function getDetail($topic,$code)
   {
 	$post = Posts::where('title','like',$topic)->get();

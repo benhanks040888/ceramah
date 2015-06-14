@@ -21,7 +21,7 @@
             </ul>
           </li>
         </ul>
-        <a href="{{ route('main') }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="{{ route('content.list') }}" class="return-btn">Kembali Ke Depan</a>
       </div>
     </div>
   </div>

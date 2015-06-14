@@ -23,7 +23,7 @@
           </li>
 		@endforeach
         </ul>
-        <a href="{{ URL::previous() }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="{{ URL::route('main') }}" class="return-btn">Kembali Ke Depan</a>
       </div>
     </div>
   </div>

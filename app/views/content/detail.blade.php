@@ -48,7 +48,7 @@
             </ul>
           </li>
         </ul>
-        <a href="{{ URL::previous() }}" class="return-btn">Kembali Ke Depan</a>
+        <a href="@if(URL::previous()===URL::route('content.search')) {{URL::route('main')}} @else {{ URL::previous() }}@endif" class="return-btn">Kembali Ke Depan</a>
       </div>
     </div>
   </div>
