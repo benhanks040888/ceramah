@@ -20,7 +20,7 @@
 				<h3>{{$title}}</h3>
 				<ul class="title-list">
 				  @foreach($postx as $post)
-				  <li class="title"><a href="{{ route('content.detail', array($title, $post->code)) }}">{{$post->subtitle}} <span class="item-meta-id">{{$post->code}}</span></a></li>
+				  <li class="title"><a href="{{getLang() == 'en' ?route('content.detail', array($title, $post->code_en)):route('content.detail', array($title, $post->code)) }}">{{getLang() == 'en' ?$post->subtitle_en:$post->subtitle}} <span class="item-meta-id">{{getLang() == 'en' ?$post->code_en:$post->code}}</span></a></li>
 				  @endforeach
 				</ul>
 			  </li>
