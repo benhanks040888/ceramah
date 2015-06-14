@@ -32,44 +32,44 @@ class ContentController extends BaseController {
   public function getPerson($person)
   {
     $post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
-	return View::make('content.person', compact('person','post_person'));
+    return View::make('content.person', compact('person','post_person'));
   }
    
   public function getPersonTopic($person, $type)
   {
-	$post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
+    $post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
     $titles = Posts::getTitleByPersonAndType($post_person,$type);
-	$posts = array();
-	foreach($titles as $title){
-		$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
-	}
+    $posts = array();
+    foreach($titles as $title){
+      $posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
+    }
 
-    return View::make('content.person-topic', compact('person', 'posts', 'type'));
+    return View::make('content.person-topic', compact('person', 'post_person', 'posts', 'type'));
   }
 
   public function getPersonTopicByInitial($person, $type, $init)
   {
     $post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
-	$titles = Posts::getTitleByPersonAndTypeAndInitial($post_person,$type,$init);
-	$posts = array();
-	foreach($titles as $title){
-		$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
-	}
-	return View::make('content.person-topic', compact('posts','person', 'type'));
+    $titles = Posts::getTitleByPersonAndTypeAndInitial($post_person,$type,$init);
+    $posts = array();
+    foreach($titles as $title){
+      $posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
+    }
+    return View::make('content.person-topic', compact('posts', 'post_person', 'person', 'type'));
   }
   
   public function postSearch()
   {
-	$term = Input::get('term');
-	
+    $term = Input::get('term');
+  
     $results = Posts::searchByTitleOrCode($term);
-	$posts = array();
-	foreach($results as $result){
-		if(!isset($posts[$result->title]))
-			$posts[$result->title] = array();
-		array_push($posts[$result->title],$result);
-	}
-	return View::make('content.search-result', compact('posts'));
+    $posts = array();
+    foreach($results as $result){
+      if(!isset($posts[$result->title]))
+        $posts[$result->title] = array();
+      array_push($posts[$result->title],$result);
+    }
+    return View::make('content.search-result', compact('posts'));
   }
   
   public function getDetail($topic,$code)

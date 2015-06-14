@@ -9,7 +9,7 @@
         </div>
         <div class="image-panel">
           <h2>
-            <span>{{ getLang() == 'en' ? 'Selected letters and talks from' : 'Surat dan ceramah-ceramah pilihan dari' }}</span><br>
+            <span>{{ getLang() == 'en' ? 'Selected letters and talks from' : 'Pilihan surat-surat dan ceramah-ceramah dari' }}</span><br>
             {{ $post_person == 'bapak' ? 'Bapak Muhammad Subuh Sumohadiwidjojo' : 'Ibu Siti Rahayu Wiryohudoyo' }}
           </h2>
         </div>
@@ -19,7 +19,7 @@
 
         <ul class="menu-list">
           <li class="menu-item">
-            <a data-toggle="collapse" href="#suratCollapse" aria-expanded="false" aria-controls="suratCollapse">Surat-surat pilihan dari @if($person === 'ibu-rahayu') Ibu Rahayu Wiryohudoyo @else Bapak Muhammad Subuh Sumohadiwdjojo @endif</a>
+            <a data-toggle="collapse" href="#suratCollapse" aria-expanded="false" aria-controls="suratCollapse">{{ getLang() == 'en' ? 'Selected letters extract from' : 'Pilihan surat-surat dari' }} {{ $post_person == 'bapak' ? 'Bapak Muhammad Subuh Sumohadiwdjojo' : 'Ibu Siti Rahayu Wiryohudoyo' }}</a>
           </li>
           <div class="collapse" id="suratCollapse">
             <ul class="alphabet-list">
@@ -53,7 +53,7 @@
             </ul>
           </div>
           <li class="menu-item">
-            <a data-toggle="collapse" href="#ceramahCollapse" aria-expanded="false" aria-controls="ceramahCollapse">Ceramah-ceramah dari @if($person === 'ibu-rahayu') Ibu Rahayu Wiryohudoyo @else Bapak Muhammad Subuh Sumohadiwdjojo @endif</a>
+            <a data-toggle="collapse" href="#ceramahCollapse" aria-expanded="false" aria-controls="ceramahCollapse">{{ getLang() == 'en' ? 'Selected talks extract from' : 'Pilihan ceramah-ceramah dari' }}  {{ $post_person == 'bapak' ? 'Bapak Muhammad Subuh Sumohadiwdjojo' : 'Ibu Siti Rahayu Wiryohudoyo' }}</a>
           </li>
           <div class="collapse" id="ceramahCollapse">
             <ul class="alphabet-list">

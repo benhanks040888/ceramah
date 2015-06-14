@@ -10,7 +10,7 @@
           </div>
           <div class="image-panel">
             <h2>
-              <span>{{ getLang() == 'en' ? 'Selected letters and talks from' : 'Surat dan ceramah-ceramah pilihan dari' }}</span><br>
+              <span>{{ getLang() == 'en' ? 'Selected letters and talks extract from' : 'Pilihan surat-surat dan ceramah-ceramah dari' }}</span><br>
               Bapak Muhammad Subuh Sumohadiwidjojo
             </h2>
           </div>
@@ -22,21 +22,21 @@
         <ul class="menu-list">
           <li class="menu-item"><a href="{{ route('person.browse', 'bapak-subud') }}">
             @if (getLang() == 'en')
-              Selected letters and talks from Bapak Muhammad Subuh Sumohadiwdjojo
+              Selected letters and talks extract from Bapak Muhammad Subuh Sumohadiwdjojo
             @else
-              Surat dan ceramah-ceramah pilihan dari Bapak Muhammad Subuh Sumohadiwdjojo
+              Pilihan surat-surat dan ceramah-ceramah dari Bapak Muhammad Subuh Sumohadiwdjojo
             @endif
           </a></li>
           <li class="menu-item"><a href="{{ route('person.browse', 'ibu-rahayu') }}">
             @if (getLang() == 'en')
-              Selected letters and talks from Ibu Rahayu Wiryohudoyo
+              Selected letters and talks extract from Ibu Rahayu Wiryohudoyo
             @else
-              Surat dan ceramah-ceramah pilihan dari Ibu Rahayu Wiryohudoyo
+              Pilihan surat-surat dan ceramah-ceramah dari Ibu Rahayu Wiryohudoyo
             @endif
           </a></li>
           <li class="menu-item"><a href="{{ route('content.list') }}">
             @if (getLang() == 'en')
-              Selected letters and talks list
+              Selected letters and talks extract list
             @else
               Daftar topik Surat dan <br>ceramah-ceramah pilihan
             @endif
@@ -48,7 +48,7 @@
           </div>
           <div class="image-panel image-panel-transparent">
             <h3>
-              <span>{{ getLang() == 'en' ? 'Selected letters and talks from' : 'Surat dan ceramah-ceramah pilihan dari' }}</span><br>
+              <span>{{ getLang() == 'en' ? 'Selected letters and talks extract from' : 'Pilihan surat-surat dan ceramah-ceramah dari' }}</span><br>
               Ibu Siti Rahayu Wiryohudoyo
             </h3>
           </div>

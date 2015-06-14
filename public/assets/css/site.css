@@ -4081,7 +4081,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   color: #0f2d6f;
   font-family: "Baskerville", Times, serif;
-  text-transform: capitalize;
+  text-transform: none;
   font-style: italic;
   font-size: 18px;
 }
@@ -4516,6 +4516,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
   text-align: left;
+  font-size: 22px;
 }
 .topic-modal .close {
   position: absolute;

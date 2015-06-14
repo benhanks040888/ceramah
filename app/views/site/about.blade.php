@@ -3,16 +3,26 @@
 @section('content')
   <div class="container main-container">
     <div class="row content-about">
-      <div class="section-navigation-container">
-        <a href="{{ route('splash') }}" class="section-link prev-section"></a>
-        <a href="{{ route('gallery') }}" class="section-link next-section"></a>
-      </div>
-
       <figure class="col-xs-5 col-no-padding featured-image">
         <img src="{{ assets_url('images/m-subuh.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
       </figure>
       <div class="col-xs-7 intro-right-container">
-        <header><h1><span>{{ getLang() == 'en' ? 'About' : 'Tentang' }}</span><br>Bapak Muhammad Subuh Sumohadiwidjojo</h1></header>
+        <header>
+          <h1>
+            <span>
+              @if (getLang() == 'en')
+                About Bapak Muhammad Subuh Sumohadiwidjojo and
+              @else
+                Tentang Bapak Muhammad Subuh Sumohadiwidjojo dan
+              @endif
+            </span><br>
+            @if (getLang() == 'en')
+              The origin of Latihan Kejiwaan of Subud
+            @else
+              Awal Latihan Kejiwaan Subud
+            @endif
+          </h1>
+        </header>
         <div class="copy-base custom-scrollbar">
           {{$content}}
         </div>

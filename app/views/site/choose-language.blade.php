@@ -8,7 +8,7 @@
       <div class="logo-container">
         <img src="{{ assets_url('images/logo.png') }}" alt="Logo">
       </div>
-      <h1>Surat dan ceramah-ceramah pilihan <hr> SELECTED LETTERS AND TALKS</h1>
+      <h1>Pilihan Surat-surat dan Ceramah-Ceramah <hr> SELECTED LETTERS AND TALKS</h1>
       <div class="language-container">
         <a href="javascript:void(0)" onclick="changeLanguage('en')" class="btn btn-subud btn-default">English</a>
         <a href="javascript:void(0)" onclick="changeLanguage('id')" class="btn btn-subud btn-default">Bahasa Indonesia</a>
