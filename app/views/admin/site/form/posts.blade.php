@@ -23,7 +23,7 @@
 	<div class="form-group">
 		<label for="title" class="col-sm-2 control-label">Title</label>
 		<div class="col-sm-10">
-			{{ Form::select('category_id', $category, $input['category_id']) }}
+			{{ Form::select('category_id', $category, $input['category_id'], array('class' => 'form-control')) }}
 		</div>
 	</div>
 	<div class="form-group">
