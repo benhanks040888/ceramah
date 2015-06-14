@@ -34,9 +34,9 @@
 
         <ul class="topic-list topic-list-with-id custom-scrollbar">
           <li class="topic-item">
-            <h3>{{$post->title}}</h3>
+            <h3>{{getLang() == 'en' ?$post->title_en:$post->title}}</h3>
             <ul class="title-list">
-              <li class="title"><a href="javascript:void(0)">{{$post->subtitle}} <span class="item-meta-id">{{$post->code}}</span></a></li>
+              <li class="title"><a href="javascript:void(0)">{{getLang() == 'en' ?$post->subtitle_en:$post->subtitle}} <span class="item-meta-id">{{getLang() == 'en' ?$post->code_en:$post->code}}</span></a></li>
             </ul>
           </li>
         </ul>

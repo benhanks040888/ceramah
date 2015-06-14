@@ -32,11 +32,6 @@ class Posts extends \Eloquent {
 		
 	);
 	
-	public static function scopeLanguage($query,$lang)
-	{
-		return $query->where('language','=',$lang);
-	}
-	
 	public static function scopePerson($query,$pers)
 	{
 		return $query->where('person','=',$pers);
@@ -55,11 +50,29 @@ class Posts extends \Eloquent {
 				->get();
 	}
 	
+	public static function getInitialsEn()
+	{
+		return DB::table(self::$myTable)
+				->select(DB::raw("DISTINCT(UCASE(LEFT(title_en,1))) AS init"))
+				->orderBy('title_en')
+				->get();
+	}
+	
 	public static function getTitleByInitials($init)
 	{
 		return DB::table(self::$myTable)
 				->select(DB::raw("DISTINCT(title) AS title"))
 				->where('title','like',$init.'%')
+				->orderBy('title')
+				->get();
+	}
+	
+	public static function getTitleByInitialsEn($init)
+	{
+		return DB::table(self::$myTable)
+				->select(DB::raw("DISTINCT(title_en) AS title"))
+				->where('title_en','like',$init.'%')
+				->orderBy('title_en')
 				->get();
 	}
 	
@@ -67,6 +80,15 @@ class Posts extends \Eloquent {
 	{
 		return DB::table(self::$myTable)
 				->select(DB::raw("DISTINCT(title) AS title"))
+				->where('person','like',$person)
+				->where('type','like',$type)
+				->get();
+	}
+	
+	public static function getTitleByPersonAndTypeEn($person = '', $type = '')
+	{
+		return DB::table(self::$myTable)
+				->select(DB::raw("DISTINCT(title_en) AS title"))
 				->where('person','like',$person)
 				->where('type','like',$type)
 				->get();
@@ -82,10 +104,29 @@ class Posts extends \Eloquent {
 				->get();
 	}
 	
+	public static function getTitleByPersonAndTypeAndInitialEn($person = '', $type = '',$init = '')
+	{
+		return DB::table(self::$myTable)
+				->select(DB::raw("DISTINCT(title_en) AS title"))
+				->where('person','like',$person)
+				->where('type','like',$type)
+				->where('title_en','like',$init.'%')
+				->get();
+	}
+	
 	public static function getPostsByPersonAndTypeAndTitle($person = '', $type = '', $title = '')
 	{
 		return DB::table(self::$myTable)
 				->where('title','like',$title)
+				->where('person','like',$person)
+				->where('type','like',$type)
+				->get();
+	}
+	
+	public static function getPostsByPersonAndTypeAndTitleEn($person = '', $type = '', $title = '')
+	{
+		return DB::table(self::$myTable)
+				->where('title_en','like',$title)
 				->where('person','like',$person)
 				->where('type','like',$type)
 				->get();
@@ -106,6 +147,16 @@ class Posts extends \Eloquent {
 				->orderBy('title')
 				->get();
 	}
+	
+	public static function searchByTitleOrCodeEn($term)
+	{
+		return DB::table(self::$myTable)
+				->where('title_en','like','%'.$term.'%')
+				->orWhere('code_en','like','%'.$term.'%')
+				->orderBy('title_en')
+				->get();
+	}
+	
 	//--------------------datatable---------------------------
         
 	public static function getDatatable($options)

@@ -13,18 +13,14 @@
 
         <ul class="topic-list topic-list-with-id custom-scrollbar">
 		  @if(!$posts)
-			@if(Cookie::get('subud_lang') === 'en')
-			<li class="topic-item"><h3>No records found</h3></li>
-			@else
-			<li class="topic-item"><h3>Data tidak ditemukan</h3></li>
-			@endif
+			<li class="topic-item"><h3>{{getLang() == 'en' ?'No records found':'Data Tidak Ditemukan'}}</h3></li>
 		  @else
 			  @foreach($posts as $title=>$postx)
 			  <li class="topic-item">
 				<h3>{{$title}}</h3>
 				<ul class="title-list">
 				  @foreach($postx as $post)
-				  <li class="title"><a href="{{ route('content.detail', array($title, $post->code)) }}">{{$post->subtitle}} <span class="item-meta-id">{{$post->code}}</span></a></li>
+				  <li class="title"><a href="{{ getLang() == 'en' ?route('content.detail', array($title, $post->code_en)):route('content.detail', array($title, $post->code)) }}">{{getLang() == 'en' ?$post->subtitle_en:$post->subtitle}} <span class="item-meta-id">{{getLang() == 'en' ?$post->code_en:$post->code}}</span></a></li>
 				  @endforeach
 				</ul>
 			  </li>
