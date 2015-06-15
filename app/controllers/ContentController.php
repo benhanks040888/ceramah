@@ -8,22 +8,22 @@ class ContentController extends BaseController {
 
   public function getIndex()
   {
-	$posts = array();
-	if(getLang() == 'en'){
-		$init = Posts::getInitialsEn();
-		foreach($init as $first){
-		  if(!empty($first->init))
-			$posts[$first->init] = Posts::getTitleByInitialsEn($first->init);
-		}
-	}
-	else{
-		$init = Posts::getInitials();
-		foreach($init as $first){
-			if(!empty($first->init))
-				$posts[$first->init] = Posts::getTitleByInitials($first->init);
-		}
-	}
-	$data['posts'] = $posts;
+  	$posts = array();
+  	if(getLang() == 'en'){
+  		$init = Posts::getInitialsEn();
+  		foreach($init as $first){
+  		  if(!empty($first->init))
+  			$posts[$first->init] = Posts::getTitleByInitialsEn($first->init);
+  		}
+  	}
+  	else{
+  		$init = Posts::getInitials();
+  		foreach($init as $first){
+  			if(!empty($first->init))
+  				$posts[$first->init] = Posts::getTitleByInitials($first->init);
+  		}
+  	}
+  	$data['posts'] = $posts;
     return View::make('content.index',$data);
   }
 
@@ -59,73 +59,73 @@ class ContentController extends BaseController {
   public function getPerson($person)
   {
     $post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
-	return View::make('content.person', compact('person','post_person'));
+    return View::make('content.person', compact('person','post_person'));
   }
    
   public function getPersonTopic($person, $type)
   {
-	$post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
-	$posts = array();
-	if(getLang() == 'en'){
-		$titles = Posts::getTitleByPersonAndTypeEn($post_person,$type);
-		foreach($titles as $title){
-			if(!empty($title->title))
-				$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitleEn($post_person,$type,$title->title);
-		}
-	}
-	else{
-		$titles = Posts::getTitleByPersonAndType($post_person,$type);
-		foreach($titles as $title){
-			if(!empty($title->title))
-				$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
-		}
-	}
-    return View::make('content.person-topic', compact('person', 'posts', 'type'));
+  	$post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
+  	$posts = array();
+  	if(getLang() == 'en'){
+  		$titles = Posts::getTitleByPersonAndTypeEn($post_person,$type);
+  		foreach($titles as $title){
+  			if(!empty($title->title))
+  				$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitleEn($post_person,$type,$title->title);
+  		}
+  	}
+  	else{
+  		$titles = Posts::getTitleByPersonAndType($post_person,$type);
+  		foreach($titles as $title){
+  			if(!empty($title->title))
+  				$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
+  		}
+  	}
+    return View::make('content.person-topic', compact('person', 'post_person', 'posts', 'type'));
   }
 
   public function getPersonTopicByInitial($person, $type, $init)
   {
     $post_person = ($person === 'ibu-rahayu')?'ibu':'bapak';
-	$posts = array();
-	if(getLang() == 'en'){
-		$titles = Posts::getTitleByPersonAndTypeAndInitialEn($post_person,$type,$init);		
-		foreach($titles as $title){
-			if(!empty($title->title))
-				$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitleEn($post_person,$type,$title->title);
-		}
-	}
-	else{
-		$titles = Posts::getTitleByPersonAndTypeAndInitial($post_person,$type,$init);		
-		foreach($titles as $title){
-			if(!empty($title->title))
-				$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
-		}
-	}
-	return View::make('content.person-topic', compact('posts','person', 'type'));
+  	$posts = array();
+  	if(getLang() == 'en'){
+  		$titles = Posts::getTitleByPersonAndTypeAndInitialEn($post_person,$type,$init);		
+  		foreach($titles as $title){
+  			if(!empty($title->title))
+  				$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitleEn($post_person,$type,$title->title);
+  		}
+  	}
+  	else{
+  		$titles = Posts::getTitleByPersonAndTypeAndInitial($post_person,$type,$init);		
+  		foreach($titles as $title){
+  			if(!empty($title->title))
+  				$posts[$title->title] = Posts::getPostsByPersonAndTypeAndTitle($post_person,$type,$title->title);
+  		}
+  	}
+  	return View::make('content.person-topic', compact('posts', 'person', 'post_person', 'type'));
   }
   
   public function postSearch()
   {
-	$term = Input::get('term');
-	$posts = array();
-	
-	if(getLang() == 'en'){
-		$results = Posts::searchByTitleOrCodeEn($term);
-		foreach($results as $result){
-			if(!isset($posts[$result->title_en]))
-				$posts[$result->title_en] = array();
-			array_push($posts[$result->title_en],$result);
-		}
-	}
-	else{
-		$results = Posts::searchByTitleOrCode($term);
-		foreach($results as $result){
-			if(!isset($posts[$result->title]))
-				$posts[$result->title] = array();
-			array_push($posts[$result->title],$result);
-		}
-	}
-	return View::make('content.search-result', compact('posts'));
+  	$term = Input::get('term');
+  	$posts = array();
+  	
+  	if(getLang() == 'en'){
+  		$results = Posts::searchByTitleOrCodeEn($term);
+  		foreach($results as $result){
+  			if(!isset($posts[$result->title_en]))
+  				$posts[$result->title_en] = array();
+  			array_push($posts[$result->title_en],$result);
+  		}
+  	}
+  	else{
+  		$results = Posts::searchByTitleOrCode($term);
+  		foreach($results as $result){
+  			if(!isset($posts[$result->title]))
+  				$posts[$result->title] = array();
+  			array_push($posts[$result->title],$result);
+  		}
+  	}
+  	return View::make('content.search-result', compact('posts'));
   }
   
   public function getDetail($topic,$code)

@@ -18,7 +18,7 @@
                 <div class="modal-content">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                   
-                  <div class="topic-body copy-mono">
+                  <div class="topic-body copy-mono custom-scrollbar">
                   {{ getLang() == 'en' ? $post->content_en:$post->content_id}}
                   </div>
                 </div>

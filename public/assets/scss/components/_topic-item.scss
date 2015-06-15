@@ -46,12 +46,17 @@
 
  	.topic-body {
 		width: 948px;
-    min-height: 400px;
-    height: auto;
-		padding: 4rem 5rem;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+	    max-height: 650px;
+	    height: auto;
+		padding: 5rem 1.2rem 5rem 5rem;
+    	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
 		overflow-y: auto;
 		text-align: left;
+    	font-size: 22px;
+
+    	.mCSB_inside > .mCSB_container {
+    		margin-right: 4rem;
+    	}
 	}
 
 	.close {

@@ -10,6 +10,8 @@ Route::group(array('namespace' => 'App\Controllers'), function() {
   Route::get('gallery', array('as' => 'gallery', 'uses' => 'HomeController@getGallery'));
   Route::get('disclaimer', array('as' => 'disclaimer', 'uses' => 'HomeController@getDisclaimer'));
   Route::post('language', array('as' => 'language', 'uses' => 'HomeController@postChangeLanguage'));
+  Route::post('search', array('as' => 'content.search', 'uses' => 'ContentController@postSearch'));
+  Route::post('language', array('as' => 'language', 'uses' => 'HomeController@postChangeLanguage'));
 
   Route::get('main', array('as' => 'main', 'uses' => 'MainController@getIndex'));
 
@@ -21,6 +23,4 @@ Route::group(array('namespace' => 'App\Controllers'), function() {
   Route::get('{name}/{type}', array('as' => 'person.topic.list', 'uses' => 'ContentController@getPersonTopic'));
   Route::get('{name}/{type}/{init}', array('as' => 'person.init.list', 'uses' => 'ContentController@getPersonTopicByInitial'));
 
-  Route::post('search', array('as' => 'content.search', 'uses' => 'ContentController@postSearch'));
-  Route::post('language', array('as' => 'language', 'uses' => 'HomeController@postChangeLanguage'));
 });
