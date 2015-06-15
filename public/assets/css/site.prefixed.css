@@ -4462,13 +4462,16 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .topic-modal .topic-body {
   width: 948px;
-  min-height: 400px;
+  max-height: 650px;
   height: auto;
-  padding: 4rem 5rem;
+  padding: 5rem 1.2rem 5rem 5rem;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
   text-align: left;
   font-size: 22px;
+}
+.topic-modal .topic-body .mCSB_inside > .mCSB_container {
+  margin-right: 4rem;
 }
 .topic-modal .close {
   position: absolute;
