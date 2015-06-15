@@ -29,13 +29,27 @@ class ContentController extends BaseController {
 
   public function getTopic($topic)
   {
-	if(getLang() == 'en')
+	if(getLang() == 'en'){
 		$post = Posts::where('title_en','like',$topic)->get();
-	else
+		if($post->isEmpty()){
+			$post = Posts::where('title','like',$topic)->first();
+			if($post){ //topic wrong language
+				return Redirect::route('content.topic',array('topic'=>$post->title_en));
+			}
+			return Redirect::route('content.list');
+		}
+	}
+	else{
 		$post = Posts::where('title','like',$topic)->get();
-    if($post->isEmpty()){
-      return Redirect::route('content.list');
-    }
+		if($post->isEmpty()){
+			$post = Posts::where('title_en','like',$topic)->first();
+			if($post){ //topic wrong language
+				return Redirect::route('content.topic',array('topic'=>$post->title));
+			}
+			return Redirect::route('content.list');
+		}
+	}
+   
     $data['title'] = $topic;
     $data['posts'] = $post;
   
@@ -117,22 +131,40 @@ class ContentController extends BaseController {
   public function getDetail($topic,$code)
   {
 	if(getLang() == 'en'){
-		$post = Posts::where('title_en','like',$topic)->get();
-		if($post->isEmpty()) {
-		  return Redirect::route('content.list');
+		$post = Posts::where('title_en','like',$topic)->first();
+		if(!$post){
+			$post = Posts::where('title','like',$topic)->first();
+			if($post){ //topic wrong language
+				return Redirect::route('content.detail',array('topic'=>$post->title_en, 'code'=>$code));
+			}
+			return Redirect::route('content.list');
 		}
-		$post = Posts::where('code_en','like',$code)->first();
-		if(!$post) {
+		
+		$post = Posts::where('title_en','like',$topic)->where('code_en','like',$code)->first();
+		if(!$post){
+		  $post = Posts::where('title_en','like',$topic)->where('code','like',$code)->first();
+		  if($post){ //code wrong language
+			return Redirect::route('content.detail',array('topic'=>$post->title_en, 'code'=>$post->code_en));
+		  }
 		  return Redirect::route('content.topic',array($topic));
 		}
 	}
 	else{
-		$post = Posts::where('title','like',$topic)->get();
-		if($post->isEmpty()) {
-		  return Redirect::route('content.list');
+		$post = Posts::where('title','like',$topic)->first();
+		if(!$post){
+			$post = Posts::where('title_en','like',$topic)->first();
+			if($post){ //topic wrong language
+				return Redirect::route('content.detail',array('topic'=>$post->title, 'code'=>$code));
+			}
+			return Redirect::route('content.list');
 		}
-		$post = Posts::where('code','like',$code)->first();
-		if(!$post) {
+		
+		$post = Posts::where('title','like',$topic)->where('code','like',$code)->first();
+		if(!$post){
+		  $post = Posts::where('title','like',$topic)->where('code_en','like',$code)->first();
+		  if($post){ //code wrong language
+			return Redirect::route('content.detail',array('topic'=>$post->title, 'code'=>$post->code));
+		  }
 		  return Redirect::route('content.topic',array($topic));
 		}
 	}

@@ -202,7 +202,7 @@ class PostsController extends BaseController {
 					'Code (ID)' => 'required|unique:posts,code',
 					'Title' => 'required',
 					'Subtitle (ID)' => 'required',
-					'Code (EN)' => 'required',
+					'Code (EN)' => 'required|unique:posts,code_en',
 					'Subtitle (EN)' => 'required'
 				)
 			);
@@ -248,7 +248,7 @@ class PostsController extends BaseController {
 						'Code (ID)' => 'required|unique:posts,code,'.Input::get('id'),
 						'Title' => 'required',
 						'Subtitle (ID)' => 'required',
-						'Code (EN)' => 'required',
+						'Code (EN)' => 'required|unique:posts,code_en,'.Input::get('id'),
 						'Subtitle (EN)' => 'required'
 					)
 				);
