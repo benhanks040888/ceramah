@@ -192,15 +192,15 @@ class PostsController extends BaseController {
 		if(Input::get('_action') == 'addProcess'){
 			$validator = Validator::make(
 				array(
-					'Code (ID)' => Input::get('code'),
 					'Title' => Input::get('category_id'),
+					'Code (ID)' => Input::get('code'),
 					'Subtitle (ID)' => Input::get('subtitle'),
 					'Code (EN)' => Input::get('code_en'),
 					'Subtitle (EN)' => Input::get('subtitle_en')
 				),
 				array(
-					'Code (ID)' => 'required|unique:posts,code',
 					'Title' => 'required',
+					'Code (ID)' => 'required|unique:posts,code',
 					'Subtitle (ID)' => 'required',
 					'Code (EN)' => 'required|unique:posts,code_en',
 					'Subtitle (EN)' => 'required'
@@ -238,15 +238,15 @@ class PostsController extends BaseController {
 			if(Input::has('id')){
 				$validator = Validator::make(
 					array(
-						'Code (ID)' => Input::get('code'),
 						'Title' => Input::get('category_id'),
+						'Code (ID)' => Input::get('code'),
 						'Subtitle (ID)' => Input::get('subtitle'),
 						'Code (EN)' => Input::get('code_en'),
 						'Subtitle (EN)' => Input::get('subtitle_en')
 					),
 					array(
-						'Code (ID)' => 'required|unique:posts,code,'.Input::get('id'),
 						'Title' => 'required',
+						'Code (ID)' => 'required|unique:posts,code,'.Input::get('id'),
 						'Subtitle (ID)' => 'required',
 						'Code (EN)' => 'required|unique:posts,code_en,'.Input::get('id'),
 						'Subtitle (EN)' => 'required'
