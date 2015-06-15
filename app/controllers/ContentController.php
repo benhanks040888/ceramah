@@ -29,26 +29,26 @@ class ContentController extends BaseController {
 
   public function getTopic($topic)
   {
-	if(getLang() == 'en'){
-		$post = Posts::where('title_en','like',$topic)->get();
-		if($post->isEmpty()){
-			$post = Posts::where('title','like',$topic)->first();
-			if($post){ //topic wrong language
-				return Redirect::route('content.topic',array('topic'=>$post->title_en));
-			}
-			return Redirect::route('content.list');
-		}
-	}
-	else{
-		$post = Posts::where('title','like',$topic)->get();
-		if($post->isEmpty()){
-			$post = Posts::where('title_en','like',$topic)->first();
-			if($post){ //topic wrong language
-				return Redirect::route('content.topic',array('topic'=>$post->title));
-			}
-			return Redirect::route('content.list');
-		}
-	}
+  	if(getLang() == 'en'){
+  		$post = Posts::where('title_en','like',$topic)->get();
+  		if($post->isEmpty()){
+  			$post = Posts::where('title','like',$topic)->first();
+  			if($post){ //topic wrong language
+  				return Redirect::route('content.topic',array('topic'=>$post->title_en));
+  			}
+  			return Redirect::route('content.list');
+  		}
+  	}
+  	else{
+  		$post = Posts::where('title','like',$topic)->get();
+  		if($post->isEmpty()){
+  			$post = Posts::where('title_en','like',$topic)->first();
+  			if($post){ //topic wrong language
+  				return Redirect::route('content.topic',array('topic'=>$post->title));
+  			}
+  			return Redirect::route('content.list');
+  		}
+  	}
    
     $data['title'] = $topic;
     $data['posts'] = $post;

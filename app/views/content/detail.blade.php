@@ -7,7 +7,7 @@
         <div class="topic-item-container">
           <div class="topic-body copy-mono custom-scrollbar">
             <div class="inner">
-				 {{ getLang() == 'en' ? $post->content_en:$post->content_id}}
+				      {{ getLang() == 'en' ? $post->content_en:$post->content_id}}
             </div>
           </div>
           <div class="modal-caller-container">
@@ -19,7 +19,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                   
                   <div class="topic-body copy-mono custom-scrollbar">
-                  {{ getLang() == 'en' ? $post->content_en:$post->content_id}}
+                    {{ getLang() == 'en' ? $post->content_en:$post->content_id}}
                   </div>
                 </div>
               </div>
