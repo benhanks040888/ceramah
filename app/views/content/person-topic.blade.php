@@ -5,7 +5,11 @@
     <div class="row row-no-padding content-content">
       <div class="col-xs-8 content-left-container">
         <div class="primary-image-container">
-          <img src="{{ $post_person == 'bapak' ? assets_url('images/cover-letter.jpg') : assets_url('images/cover-letter-ibu.jpg') }}" alt="Cover Letter">
+          @if ($type == 'surat')
+            <img src="{{ $post_person == 'bapak' ? assets_url('images/cover-letter.jpg') : assets_url('images/cover-letter-ibu.jpg') }}" alt="Cover Letter">
+          @elseif ($type == 'ceramah')
+            <img src="{{ $post_person == 'bapak' ? assets_url('images/ceramah-bapak.jpg') : assets_url('images/ceramah-ibu.jpg') }}" alt="Ceramah">
+          @endif
         </div>
       </div>
       <div class="col-xs-4 content-right-container">

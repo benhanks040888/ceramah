@@ -12,8 +12,8 @@
             {{$content}}
           </div>
           <div class="verification-container">
-            <a href="{{ route('main') }}" class="btn btn-subud btn-default">Setuju</a>
-            <a href="{{ URL::previous() }}" class="btn btn-subud btn-danger">Tidak Setuju</a>
+            <a href="{{ route('main') }}" class="btn btn-subud btn-default">{{ getLang() == 'en' ? 'Agree' : 'Setuju' }}</a>
+            <a href="{{ URL::previous() }}" class="btn btn-subud btn-danger">{{ getLang() == 'en' ? 'Not Agree' : 'Tidak Setuju' }}</a>
           </div>
         </div>
       </div>

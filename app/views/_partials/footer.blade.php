@@ -6,7 +6,7 @@
     
     <div class="col-xs-7" id="copyright">
       <p>
-        &copy; 1955-{{ date('Y') }} by Subud Publication. All rights reserved. This site or any portion of its content may not be reproduced or used in any manner whatsoever without the express written permission of the publisher. Subud&reg; and the seven circles symbol are registered marks of the World Subud Association.
+        &copy; World Subud Association. All rights reserved. This site or any portion of its content may not be reproduced or used in any manner whatsoever without the express written permission of the publisher. Subud&reg; and the seven circles symbol are registered marks of the World Subud Association.
       </p>
     </div>
 

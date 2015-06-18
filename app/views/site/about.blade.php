@@ -28,9 +28,9 @@
         </div>
         <nav class="bottom-navigation">
           <ul>
-            <li><a href="{{ route('about') }}"><span class="label label-default">Tentang Bapak</span></a></li>
+            <li><a href="{{ route('about') }}"><span class="label label-default">{{ getLang() == 'en' ? 'About Bapak' : 'Tentang Bapak' }}</span></a></li>
             <li><a href="{{ route('gallery') }}"><span class="label label-default">Photo Gallery</span></a></li>
-            <li><a href="{{ route('disclaimer') }}"><span class="label label-default">Go To Surat dan Ceramah</span></a></li>
+            <li><a href="{{ route('disclaimer') }}"><span class="label label-default">{{ getLang() == 'en' ? 'Go to Talks & Letters' : 'Go to Surat dan Ceramah' }}</span></a></li>
           </ul>
         </nav>
       </div>
