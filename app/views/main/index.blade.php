@@ -4,7 +4,7 @@
   <div class="container main-container">
     <div class="row row-no-padding content-content">
       <div class="col-xs-8 content-left-container">
-        <a href="{{ route('person.browse', 'bapak-subud') }}" class="personal-page-link">
+        <a href="{{ route('person.browse', 'bapak-subuh') }}" class="personal-page-link">
           <div class="primary-image-container">
             <img src="{{ assets_url('images/m-subuh-large.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
           </div>
@@ -20,7 +20,7 @@
         @include('_partials.content-menu')
 
         <ul class="menu-list">
-          <li class="menu-item"><a href="{{ route('person.browse', 'bapak-subud') }}">
+          <li class="menu-item"><a href="{{ route('person.browse', 'bapak-subuh') }}">
             @if (getLang() == 'en')
               Selected letters and talks extract from Bapak Muhammad Subuh Sumohadiwdjojo
             @else

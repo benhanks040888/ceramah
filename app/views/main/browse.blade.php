@@ -20,7 +20,7 @@
 		<div class="primary-image-container">
           <img src="{{ assets_url('images/m-subuh-large.jpg') }}" alt="Muhammad Subuh Sumohadiwidjojo">
         </div>
-        <a href="{{ route('person.browse', 'bapak-subud') }}">
+        <a href="{{ route('person.browse', 'bapak-subuh') }}">
           <div class="image-panel">
             <h2>
               <span>Surat dan ceramah-ceramah pilihan dari </span><br>

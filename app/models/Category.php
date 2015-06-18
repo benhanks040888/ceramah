@@ -13,7 +13,7 @@ class Category extends \Eloquent {
 	private static $myTable = 'categories';
 	
 	private static $owner = array(
-			'bapak' => 'Bapak Subud',
+			'bapak' => 'Bapak Subuh',
 			'ibu' => 'Ibu Rahayu'
 		);
 
