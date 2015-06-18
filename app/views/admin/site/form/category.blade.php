@@ -33,7 +33,7 @@
 	<div class="form-group">
 		<label for="inputType" class="col-sm-2 control-label">Belongs To</label>
 		<div class="col-sm-10">
-			{{ Form::select('belongs_to', $owners, $input['belongs_to']) }}
+			{{ Form::select('belongs_to', $owners, $input['belongs_to'], array('class' => 'form-control')) }}
 		</div>
 	</div>
 	<div class="form-group">

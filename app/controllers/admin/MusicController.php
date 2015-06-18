@@ -37,10 +37,10 @@ class MusicController extends BaseController {
 			if ($validator->fails()){
 				return Redirect::route('admin.music')->withErrors($validator)->withInput();
 			}
-			if($mime !== 'audio/mpeg'){
-				$error = "You have to input audio MP3 file";
-				return Redirect::route('admin.music')->withErrors($error)->withInput();
-			}
+			// if($mime !== 'audio/mpeg'){
+			// 	$error = "You have to input audio MP3 file";
+			// 	return Redirect::route('admin.music')->withErrors($error)->withInput();
+			// }
 			$music = new Music;
 			$music->title = Input::get('title');
 			if(!file_exists($this->upload_path)) {

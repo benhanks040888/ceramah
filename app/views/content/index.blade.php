@@ -17,7 +17,7 @@
               <h3>{{$init}}</h3>
               <ul class="title-list">
 				@foreach($postx as $post)
-				<li class="title"><a href="{{ route('content.topic', Str::slug($post->title)) }}">{{$post->title}}</a></li>
+				<li class="title"><a href="{{ route('content.topic', $post->title) }}">{{$post->title}}</a></li>
                 @endforeach
               </ul>
             </li>
